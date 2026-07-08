@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="FlitzWeb">
+  <defs>
+    <linearGradient id="flitzBolt" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F5BFF"/>
+      <stop offset="1" stop-color="#FF5B34"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#0C0E1A"/>
+  <path d="M18 5 8 18h6l-2 9 12-14h-7l1-8z" fill="url(#flitzBolt)"/>
+</svg>
