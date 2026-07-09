@@ -1,7 +1,8 @@
 import { Resend } from "resend";
 import { BUSINESS_TZ } from "./businessHours.js";
 
-const FROM = process.env.BOOKING_FROM_EMAIL;
+const FROM_ADDR = process.env.BOOKING_FROM_EMAIL;
+const FROM = FROM_ADDR ? `FlitzWeb <${FROM_ADDR}>` : FROM_ADDR;
 const OWNERS = (process.env.BOOKING_OWNER_EMAIL || "")
   .split(",")
   .map((e) => e.trim())
@@ -32,12 +33,15 @@ export function formatWhen(dateStr, timeStr) {
 // so failures here are logged, never thrown.
 export async function sendConfirmation({ name, email, when }) {
   try {
-    await getResend().emails.send({
+    const { error } = await getResend().emails.send({
       from: FROM,
       to: email,
       subject: "Je gesprek is ingepland",
       text: `Hoi ${name},\n\nJe gesprek staat gepland voor ${when} (${BUSINESS_TZ}).\n\nTot dan!\nFlitzWeb`,
     });
+    // Resend returns delivery errors in the response body rather than throwing,
+    // so an unverified domain / bad address would otherwise pass silently.
+    if (error) console.error("Resend confirmation email error:", error);
   } catch (err) {
     console.error("Resend confirmation email failed:", err);
   }
@@ -53,12 +57,13 @@ export async function sendOwnerNotification({ name, email, company, type, messag
     message ? `Bericht: ${message}` : null,
   ].filter(Boolean);
   try {
-    await getResend().emails.send({
+    const { error } = await getResend().emails.send({
       from: FROM,
       to: OWNERS,
       subject: `Nieuwe boeking: ${name}`,
       text: lines.join("\n"),
     });
+    if (error) console.error("Resend owner notification error:", error);
   } catch (err) {
     console.error("Resend owner notification failed:", err);
   }
