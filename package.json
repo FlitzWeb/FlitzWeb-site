@@ -1,0 +1,10 @@
+{
+  "name": "flitzweb-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "google-auth-library": "^9.15.0",
+    "resend": "^4.0.1"
+  }
+}

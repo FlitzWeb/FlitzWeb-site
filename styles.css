@@ -463,6 +463,13 @@ ul,ol{ list-style:none; padding:0; }
 .slots button{ padding:11px 4px; border:1.5px solid var(--line); border-radius:12px; background:var(--paper); font-weight:600; font-size:.92rem; transition:all var(--dur) var(--ease); }
 .slots button:hover{ border-color:var(--blue); }
 .slots button[aria-pressed="true"]{ background:var(--blue); border-color:var(--blue); color:#fff; }
+.slots__msg{ grid-column:1/-1; font-size:.88rem; color:var(--faint); padding:11px 4px; }
+.slots__msg--error{ color:var(--flash-600); }
+
+.book__error{ grid-column:1/-1; font-size:.86rem; font-weight:600; color:var(--flash-600); background:var(--flash-050); border-radius:10px; padding:11px 15px; margin:0; }
+.book__error[hidden]{ display:none; }
+
+.btn[disabled]{ opacity:.55; cursor:not-allowed; pointer-events:none; }
 
 .book__fine{ grid-column:1/-1; text-align:center; font-size:.82rem; color:var(--faint); margin-top:-4px; }
 

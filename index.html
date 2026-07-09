@@ -305,6 +305,8 @@
             <textarea id="bf-msg" name="message" rows="3" placeholder="Een zin of twee over je project en planning." data-en-ph="A sentence or two about your project and timeline."></textarea>
           </div>
 
+          <p class="book__error" data-error hidden></p>
+
           <button class="btn btn--flash btn--lg btn--block" type="submit">
             <span data-en="Book my call">Plan mijn gesprek</span>
             <svg class="btn__i" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -414,6 +416,8 @@
           <legend><span data-en="Pick a time">Kies een tijd</span> <span class="tz" data-tz></span></legend>
           <div class="slots" data-slots role="group" aria-label="Kies een tijd"></div>
         </fieldset>
+
+        <p class="book__error" data-error hidden></p>
 
         <button class="btn btn--primary btn--lg btn--block" type="submit">
           <span data-en="Book my call">Plan mijn gesprek</span>

@@ -16,12 +16,12 @@
     nl: ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
     en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   };
-  const TIMES = ["09:00", "10:30", "13:00", "14:30", "16:00", "17:30"];
+  const BUSINESS_TZ = "Europe/Amsterdam";
   const STR = {
     nl: {
       title: "FlitzWeb — Websites met de snelheid van een flits",
       desc: "FlitzWeb is een webstudio die snelle, scherpe websites ontwerpt en bouwt voor ambitieuze merken. Strategie, design en code, met de hand gebouwd.",
-      tz: (z) => "· jouw tijd (" + z + ")",
+      tz: "· Nederlandse tijd (Europe/Amsterdam)",
       required: "Dit veld is verplicht.",
       email: "Vul een geldig e-mailadres in.",
       at: " om ",
@@ -29,11 +29,16 @@
       success: (hi, when) => hi + ", we hebben je voorlopig ingepland voor " + when + ". Je ontvangt zo een bevestiging in je inbox.",
       thanks: "Bedankt",
       thanksName: (n) => "Bedankt " + n,
+      loading: "Beschikbare tijden laden…",
+      noSlots: "Geen tijden meer beschikbaar op deze dag.",
+      loadError: "Kon tijden niet laden. Probeer het opnieuw.",
+      slotTaken: "Deze tijd is net vergeven. Kies een andere.",
+      submitError: "Er ging iets mis. Probeer het opnieuw of mail ons.",
     },
     en: {
       title: "FlitzWeb — Websites at the speed of a flash",
       desc: "FlitzWeb is a web studio that designs and builds fast, sharp websites for ambitious brands. Strategy, design and code, built by hand.",
-      tz: (z) => "· your time (" + z + ")",
+      tz: "· Central European time (Europe/Amsterdam)",
       required: "This field is required.",
       email: "Enter a valid email address.",
       at: " at ",
@@ -41,6 +46,11 @@
       success: (hi, when) => hi + ", we've pencilled you in for " + when + ". You'll get a confirmation in your inbox shortly.",
       thanks: "Thanks",
       thanksName: (n) => "Thanks " + n,
+      loading: "Loading available times…",
+      noSlots: "No times left on this day.",
+      loadError: "Couldn't load times. Please try again.",
+      slotTaken: "That time was just taken. Pick another.",
+      submitError: "Something went wrong. Please try again or email us.",
     },
   };
 
@@ -119,20 +129,93 @@
   }
 
   /* ---------- Booking: day + time controls ---------- */
-  function nextDays(count) {
+  // Days are keyed/computed in BUSINESS_TZ (not the visitor's local timezone) so the
+  // date strings sent to /api/availability always match what the backend considers
+  // "today" and "a work day" — otherwise a visitor far from Europe/Amsterdam near
+  // midnight could pick a day the backend then rejects.
+  function todayKeyInBusinessTz() {
+    return new Intl.DateTimeFormat("en-CA", {
+      timeZone: BUSINESS_TZ,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(new Date());
+  }
+
+  function nextWorkDays(count) {
+    const [y0, m0, d0] = todayKeyInBusinessTz().split("-").map(Number);
+    let cursor = new Date(Date.UTC(y0, m0 - 1, d0));
     const out = [];
-    const d = new Date();
-    d.setHours(0, 0, 0, 0);
     while (out.length < count) {
-      d.setDate(d.getDate() + 1);
-      const dow = d.getDay();
-      if (dow !== 0 && dow !== 6) out.push(new Date(d));
+      cursor = new Date(cursor.getTime() + 86400000);
+      const dow = cursor.getUTCDay();
+      if (dow !== 0 && dow !== 6) {
+        out.push({ key: cursor.toISOString().slice(0, 10), dow, day: cursor.getUTCDate(), month: cursor.getUTCMonth() });
+      }
     }
     return out;
   }
 
-  function formatDay(date) {
-    return WEEKDAY[lang][date.getDay()] + " " + date.getDate() + " " + MONTH[lang][date.getMonth()];
+  function formatDay(d) {
+    return WEEKDAY[lang][d.dow] + " " + d.day + " " + MONTH[lang][d.month];
+  }
+
+  async function loadSlots(form) {
+    const b = form.__booking;
+    if (!b) return;
+    const { slotWrap, state } = b;
+    const submitBtn = $('button[type="submit"]', form);
+    state.time = null;
+    slotWrap.innerHTML = "";
+    const loading = document.createElement("p");
+    loading.className = "slots__msg";
+    loading.textContent = STR[lang].loading;
+    slotWrap.appendChild(loading);
+    if (submitBtn) submitBtn.disabled = true;
+
+    let slots = [];
+    let failed = false;
+    try {
+      const res = await fetch("/api/availability?date=" + encodeURIComponent(state.day.key));
+      if (!res.ok) throw new Error("bad status");
+      const data = await res.json();
+      slots = Array.isArray(data.slots) ? data.slots : [];
+    } catch (e) {
+      failed = true;
+    }
+
+    if (b.dayWrap.__lastRequestedKey && b.dayWrap.__lastRequestedKey !== state.day.key) return; // superseded by a newer day pick
+    slotWrap.innerHTML = "";
+
+    if (failed) {
+      const err = document.createElement("p");
+      err.className = "slots__msg slots__msg--error";
+      err.textContent = STR[lang].loadError;
+      slotWrap.appendChild(err);
+      return;
+    }
+    if (!slots.length) {
+      const empty = document.createElement("p");
+      empty.className = "slots__msg";
+      empty.textContent = STR[lang].noSlots;
+      slotWrap.appendChild(empty);
+      return;
+    }
+
+    slots.forEach((t, i) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = t;
+      btn.setAttribute("aria-pressed", String(i === 0));
+      btn.addEventListener("click", () => {
+        $$("button", slotWrap).forEach((x) => x.setAttribute("aria-pressed", "false"));
+        btn.setAttribute("aria-pressed", "true");
+        state.time = t;
+      });
+      slotWrap.appendChild(btn);
+    });
+    state.time = slots[0];
+    if (submitBtn) submitBtn.disabled = false;
   }
 
   function initBooking(form) {
@@ -141,40 +224,31 @@
     const tzEl = $("[data-tz]", form);
     if (!dayWrap || !slotWrap) return;
 
-    const days = nextDays(5);
-    const state = { day: days[0], time: TIMES[2] };
+    const days = nextWorkDays(5);
+    const state = { day: days[0], time: null };
 
-    days.forEach((date, i) => {
+    days.forEach((d, i) => {
       const b = document.createElement("button");
       b.type = "button";
       b.setAttribute("aria-pressed", String(i === 0));
       b.innerHTML =
-        '<span class="dp__dow">' + WEEKDAY[lang][date.getDay()] + '</span>' +
-        '<span class="dp__num">' + date.getDate() + '</span>' +
-        '<span class="dp__mon">' + MONTH[lang][date.getMonth()] + '</span>';
+        '<span class="dp__dow">' + WEEKDAY[lang][d.dow] + '</span>' +
+        '<span class="dp__num">' + d.day + '</span>' +
+        '<span class="dp__mon">' + MONTH[lang][d.month] + '</span>';
       b.addEventListener("click", () => {
         $$("button", dayWrap).forEach((x) => x.setAttribute("aria-pressed", "false"));
         b.setAttribute("aria-pressed", "true");
-        state.day = date;
+        state.day = d;
+        dayWrap.__lastRequestedKey = d.key;
+        loadSlots(form);
       });
       dayWrap.appendChild(b);
     });
 
-    TIMES.forEach((t, i) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.textContent = t;
-      b.setAttribute("aria-pressed", String(i === 2));
-      b.addEventListener("click", () => {
-        $$("button", slotWrap).forEach((x) => x.setAttribute("aria-pressed", "false"));
-        b.setAttribute("aria-pressed", "true");
-        state.time = t;
-      });
-      slotWrap.appendChild(b);
-    });
-
-    form.__booking = { state, days, dayWrap, tzEl };
+    form.__booking = { state, days, dayWrap, slotWrap, tzEl };
     relabelBooking(form);
+    dayWrap.__lastRequestedKey = state.day.key;
+    loadSlots(form);
   }
 
   function relabelBooking(form) {
@@ -182,15 +256,10 @@
     if (!b) return;
     $$("button", b.dayWrap).forEach((btn, i) => {
       const d = b.days[i];
-      $(".dp__dow", btn).textContent = WEEKDAY[lang][d.getDay()];
-      $(".dp__mon", btn).textContent = MONTH[lang][d.getMonth()];
+      $(".dp__dow", btn).textContent = WEEKDAY[lang][d.dow];
+      $(".dp__mon", btn).textContent = MONTH[lang][d.month];
     });
-    if (b.tzEl) {
-      try {
-        const z = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        b.tzEl.textContent = STR[lang].tz(z);
-      } catch (e) { /* noop */ }
-    }
+    if (b.tzEl) b.tzEl.textContent = STR[lang].tz;
   }
 
   /* ---------- Form validation + submit ---------- */
@@ -209,20 +278,57 @@
   }
 
   function handleSubmit(form) {
-    form.addEventListener("submit", (e) => {
+    const errorEl = $("[data-error]", form);
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!validate(form)) return;
 
-      const data = new FormData(form);
-      const name = (data.get("name") || "").toString().trim().split(" ")[0];
-      const hi = name ? STR[lang].thanksName(name) : STR[lang].thanks;
       const st = (form.__booking && form.__booking.state) || {};
-      const when = st.day && st.time ? formatDay(st.day) + STR[lang].at + st.time : STR[lang].whenFallback;
+      if (!st.day || !st.time) return;
 
-      const success = $("[data-success]", form);
-      const msg = $("[data-success-msg]", form);
-      if (msg) msg.textContent = STR[lang].success(hi, when);
-      if (success) success.hidden = false;
+      const submitBtn = $('button[type="submit"]', form);
+      if (errorEl) errorEl.hidden = true;
+      if (submitBtn) submitBtn.disabled = true;
+
+      const data = new FormData(form);
+      const payload = {
+        name: (data.get("name") || "").toString().trim(),
+        email: (data.get("email") || "").toString().trim(),
+        company: (data.get("company") || "").toString().trim(),
+        type: (data.get("type") || "").toString().trim(),
+        message: (data.get("message") || "").toString().trim(),
+        date: st.day.key,
+        time: st.time,
+      };
+
+      try {
+        const res = await fetch("/api/book", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.status === 409) {
+          if (errorEl) { errorEl.textContent = STR[lang].slotTaken; errorEl.hidden = false; }
+          loadSlots(form);
+          return;
+        }
+        if (!res.ok) throw new Error("booking failed");
+
+        const first = payload.name.split(" ")[0];
+        const hi = first ? STR[lang].thanksName(first) : STR[lang].thanks;
+        const when = formatDay(st.day) + STR[lang].at + st.time;
+
+        const success = $("[data-success]", form);
+        const msg = $("[data-success-msg]", form);
+        if (msg) msg.textContent = STR[lang].success(hi, when);
+        if (success) success.hidden = false;
+      } catch (err) {
+        if (errorEl) { errorEl.textContent = STR[lang].submitError; errorEl.hidden = false; }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
 
     $$("[data-reset]", form).forEach((btn) =>
@@ -230,7 +336,15 @@
         form.reset();
         const success = $("[data-success]", form);
         if (success) success.hidden = true;
+        if (errorEl) errorEl.hidden = true;
         $$(".is-invalid", form).forEach((el) => el.classList.remove("is-invalid"));
+        if (form.__booking) {
+          const dayWrap = form.__booking.dayWrap;
+          $$("button", dayWrap).forEach((b, i) => b.setAttribute("aria-pressed", String(i === 0)));
+          form.__booking.state.day = form.__booking.days[0];
+          dayWrap.__lastRequestedKey = form.__booking.state.day.key;
+          loadSlots(form);
+        }
       })
     );
   }
