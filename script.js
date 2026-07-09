@@ -20,7 +20,7 @@
   const STR = {
     nl: {
       title: "FlitzWeb — Websites met de snelheid van een flits",
-      desc: "FlitzWeb is een webstudio die snelle, scherpe websites ontwerpt en bouwt voor ambitieuze merken. Strategie, design en code. Versneld met AI, verfijnd door mensen.",
+      desc: "FlitzWeb is een webstudio die snelle, scherpe websites ontwerpt en bouwt voor ambitieuze merken. Strategie, design en code, met de hand gebouwd.",
       tz: (z) => "· jouw tijd (" + z + ")",
       required: "Dit veld is verplicht.",
       email: "Vul een geldig e-mailadres in.",
@@ -32,7 +32,7 @@
     },
     en: {
       title: "FlitzWeb — Websites at the speed of a flash",
-      desc: "FlitzWeb is a web studio that designs and builds fast, sharp websites for ambitious brands. Strategy, design and code. Accelerated by AI, refined by humans.",
+      desc: "FlitzWeb is a web studio that designs and builds fast, sharp websites for ambitious brands. Strategy, design and code, built by hand.",
       tz: (z) => "· your time (" + z + ")",
       required: "This field is required.",
       email: "Enter a valid email address.",
