@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
     "google-auth-library": "^9.15.0",
     "resend": "^4.0.1"
   }
