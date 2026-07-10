@@ -315,6 +315,7 @@ injectSpeedInsights();
         });
 
         if (res.status === 409) {
+          if (window.track) window.track("booking_slot_taken");
           if (errorEl) { errorEl.textContent = STR[lang].slotTaken; errorEl.hidden = false; }
           loadSlots(form);
           return;
@@ -329,6 +330,7 @@ injectSpeedInsights();
         const msg = $("[data-success-msg]", form);
         if (msg) msg.textContent = STR[lang].success(hi, when);
         if (success) success.hidden = false;
+        if (window.track) window.track("booking_success", { type: payload.type });
       } catch (err) {
         if (errorEl) { errorEl.textContent = STR[lang].submitError; errorEl.hidden = false; }
       } finally {
@@ -405,6 +407,7 @@ injectSpeedInsights();
       }
       const note = $("[data-news-note]");
       if (note) note.hidden = false;
+      if (window.track) window.track("newsletter_signup");
       news.reset();
     });
   }
