@@ -1,11 +1,6 @@
 /* =========================================================
    Flits Web — interactions + NL/EN language switch
    ========================================================= */
-
-// Initialize Vercel Speed Insights
-import { injectSpeedInsights } from '@vercel/speed-insights';
-injectSpeedInsights();
-
 (function () {
   "use strict";
   const $  = (s, r = document) => r.querySelector(s);
