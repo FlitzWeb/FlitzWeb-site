@@ -165,6 +165,9 @@
     if (!b) return;
     const { slotWrap, state } = b;
     const submitBtn = $('button[type="submit"]', form);
+    // Capture the day this call is for, so a slow response can't render its
+    // slots under a day the visitor has since switched away from.
+    const requestedKey = state.day.key;
     state.time = null;
     slotWrap.innerHTML = "";
     const loading = document.createElement("p");
@@ -176,7 +179,7 @@
     let slots = [];
     let failed = false;
     try {
-      const res = await fetch("/api/availability?date=" + encodeURIComponent(state.day.key));
+      const res = await fetch("/api/availability?date=" + encodeURIComponent(requestedKey));
       if (!res.ok) throw new Error("bad status");
       const data = await res.json();
       slots = Array.isArray(data.slots) ? data.slots : [];
@@ -184,7 +187,7 @@
       failed = true;
     }
 
-    if (b.dayWrap.__lastRequestedKey && b.dayWrap.__lastRequestedKey !== state.day.key) return; // superseded by a newer day pick
+    if (b.dayWrap.__lastRequestedKey !== requestedKey) return; // superseded by a newer day pick
     slotWrap.innerHTML = "";
 
     if (failed) {
@@ -298,6 +301,7 @@
         company: (data.get("company") || "").toString().trim(),
         type: (data.get("type") || "").toString().trim(),
         message: (data.get("message") || "").toString().trim(),
+        website: (data.get("website") || "").toString(), // honeypot, should stay empty
         date: st.day.key,
         time: st.time,
       };
@@ -389,23 +393,6 @@
   }
   $$("[data-open-booking]").forEach((b) => b.addEventListener("click", openModal));
   $$("[data-close-booking]").forEach((b) => b.addEventListener("click", closeModal));
-
-  /* ---------- Newsletter (footer) ---------- */
-  const news = $("[data-news]");
-  if (news) {
-    news.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const input = $("input", news);
-      if (!input.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
-        input.focus();
-        return;
-      }
-      const note = $("[data-news-note]");
-      if (note) note.hidden = false;
-      if (window.track) window.track("newsletter_signup");
-      news.reset();
-    });
-  }
 
   /* ---------- Scroll reveal ---------- */
   if (!reduceMotion && "IntersectionObserver" in window) {

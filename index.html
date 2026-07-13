@@ -5,6 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FlitzWeb — Websites met de snelheid van een flits</title>
   <meta name="description" content="FlitzWeb is een webstudio die snelle, scherpe websites ontwerpt en bouwt voor ambitieuze merken. Strategie, design en code, met de hand gebouwd." />
+  <link rel="canonical" href="https://flitzweb.nl/" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:site_name" content="FlitzWeb" />
+  <meta property="og:url" content="https://flitzweb.nl/" />
+  <meta property="og:title" content="FlitzWeb — Websites met de snelheid van een flits" />
+  <meta property="og:description" content="FlitzWeb is een webstudio die snelle, scherpe websites ontwerpt en bouwt voor ambitieuze merken. Strategie, design en code, met de hand gebouwd." />
+  <!-- TODO: voeg een og:image toe (1200×630 PNG/JPG op een absolute URL) voor een rijke preview bij delen op social/WhatsApp -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="FlitzWeb — Websites met de snelheid van een flits" />
+  <meta name="twitter:description" content="FlitzWeb ontwerpt en bouwt snelle, scherpe websites voor ambitieuze merken." />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FlitzWeb",
+    "url": "https://flitzweb.nl/",
+    "email": "info@flitzweb.nl",
+    "description": "Webstudio die snelle, scherpe websites ontwerpt en bouwt voor ambitieuze merken.",
+    "areaServed": "NL",
+    "knowsLanguage": ["nl", "en"]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -262,6 +289,11 @@
         </div>
 
         <form class="book__form" data-booking-form novalidate>
+          <!-- Honeypot: verborgen voor mensen, bots vullen 'm wel in -->
+          <div class="hp" aria-hidden="true">
+            <label for="bf-website">Laat dit veld leeg</label>
+            <input id="bf-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="field field--half">
             <label for="bf-name" data-en="Name">Naam</label>
             <input id="bf-name" name="name" type="text" autocomplete="name" required placeholder="Jan Jansen" data-en-ph="Jane Doe" />
@@ -346,14 +378,6 @@
             <span class="brand__word">Flitz<span class="brand__web">Web</span></span>
           </a>
           <p class="foot__blurb" data-en="A web studio building fast, sharp websites for ambitious brands.">Een webstudio die snelle, scherpe websites bouwt voor ambitieuze merken.</p>
-          <form class="foot__news" data-news>
-            <label for="news-email" class="sr-only" data-en="Email for newsletter">E-mail voor nieuwsbrief</label>
-            <input id="news-email" type="email" placeholder="jij@email.nl" required data-en-ph="you@email.com" />
-            <button class="btn btn--flash" type="submit" aria-label="Aanmelden">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </form>
-          <p class="foot__newsnote" data-news-note hidden data-en="Thanks — you're subscribed.">Bedankt — je bent aangemeld.</p>
         </div>
 
         <nav class="foot__col" aria-label="Studio">
@@ -397,6 +421,11 @@
       <p class="modal__lede" data-en="Pick a day and time that suits you. We'll confirm by email within one business day.">Kies een dag en tijd die jou uitkomt. We bevestigen per e-mail binnen één werkdag.</p>
 
       <form class="modal__form" data-booking-form novalidate>
+        <!-- Honeypot: verborgen voor mensen, bots vullen 'm wel in -->
+        <div class="hp" aria-hidden="true">
+          <label for="mf-website">Laat dit veld leeg</label>
+          <input id="mf-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
         <div class="field">
           <label for="mf-name" data-en="Name">Naam</label>
           <input id="mf-name" name="name" type="text" autocomplete="name" required placeholder="Jan Jansen" data-en-ph="Jane Doe" />

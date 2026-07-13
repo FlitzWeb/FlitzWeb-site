@@ -429,6 +429,8 @@ ul,ol{ list-style:none; padding:0; }
 .book__facts svg{ color:var(--flash); flex:none; }
 
 .book__form{ position:relative; background:var(--cloud); color:var(--text); border-radius:var(--r-xl); padding:clamp(24px,3vw,38px); box-shadow:var(--shadow-lg); display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+/* Honeypot: uit beeld voor mensen, wél in het DOM voor bots */
+.hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 .field{ display:flex; flex-direction:column; gap:8px; border:0; padding:0; min-width:0; }
 .field--half{ grid-column:span 1; }
 .field--full{ grid-column:1 / -1; }
@@ -488,12 +490,6 @@ ul,ol{ list-style:none; padding:0; }
 .foot__big{ font-family:"Syne",sans-serif; font-weight:800; font-size:clamp(2.6rem,7vw,5.6rem); line-height:.95; letter-spacing:-.03em; color:#fff; }
 .foot__grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:32px; padding:clamp(40px,6vw,64px) 0 40px; }
 .foot__blurb{ color:var(--on-dark-mut); max-width:34ch; margin:16px 0 20px; font-size:.98rem; }
-.foot__news{ display:flex; gap:8px; max-width:340px; }
-.foot__news input{ flex:1; background:var(--ink-2); border:1.5px solid var(--ink-line); border-radius:999px; padding:12px 18px; color:#fff; font:inherit; }
-.foot__news input::placeholder{ color:var(--on-dark-mut); }
-.foot__news input:focus{ outline:none; border-color:var(--flash); }
-.foot__news .btn{ padding:12px 16px; }
-.foot__newsnote{ margin-top:10px; color:var(--flash); font-size:.9rem; font-weight:600; }
 .foot__col h4{ font-family:"Space Mono",monospace; font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--on-dark-mut); margin-bottom:16px; font-weight:700; }
 .foot__col a{ display:block; padding:6px 0; color:var(--on-dark); font-weight:500; transition:color var(--dur) var(--ease); }
 .foot__col a:hover{ color:var(--flash); }
