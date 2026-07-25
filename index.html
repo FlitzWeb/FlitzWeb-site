@@ -35,9 +35,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,320..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='6' y1='4' x2='26' y2='28' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232F5BFF'/%3E%3Cstop offset='1' stop-color='%23FF5B34'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%230C0E1A'/%3E%3Cpath d='M18 5 8 18h6l-2 9 12-14h-7l1-8z' fill='url(%23g)'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='6' y1='4' x2='26' y2='28' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FF7A4D'/%3E%3Cstop offset='1' stop-color='%23E8471F'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='%231C1813'/%3E%3Cpath d='M18 5 8 18h6l-2 9 12-14h-7l1-8z' fill='url(%23g)'/%3E%3C/svg%3E" />
 </head>
 <body>
   <a class="skip-link" href="#main" data-en="Skip to content">Naar inhoud</a>
@@ -47,7 +47,7 @@
     <div class="wrap nav__inner">
       <a class="brand" href="#top" aria-label="FlitzWeb home">
         <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="30" height="30"><defs><linearGradient id="fbNav" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2F5BFF"/><stop offset="1" stop-color="#FF5B34"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="var(--ink)"/><path d="M18 5 8 18h6l-2 9 12-14h-7l1-8z" fill="url(#fbNav)"/></svg>
+          <svg viewBox="0 0 32 32" width="30" height="30"><defs><linearGradient id="fbNav" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF7A4D"/><stop offset="1" stop-color="#E8471F"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="var(--ink-deep)"/><path d="M18 5 8 18h6l-2 9 12-14h-7l1-8z" fill="url(#fbNav)"/></svg>
         </span>
         <span class="brand__word">Flitz<span class="brand__web">Web</span></span>
       </a>
@@ -55,8 +55,8 @@
       <nav class="nav__links" aria-label="Hoofdmenu">
         <a href="#work" data-en="Work">Werk</a>
         <a href="#services" data-en="Services">Diensten</a>
-        <a href="#process" data-en="Approach">Aanpak</a>
         <a href="#studio" data-en="Studio">Studio</a>
+        <a href="#contact">Contact</a>
       </nav>
 
       <div class="nav__end">
@@ -90,91 +90,68 @@
     <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__copy">
-          <p class="eyebrow"><span class="eyebrow__dot"></span><span data-en="Web studio · Fast &amp; sharp">Webstudio · Snel &amp; scherp</span></p>
           <h1 class="hero__title">
-            <span data-en="Websites that go live at the speed of a">Websites die live gaan met de snelheid van een</span>
-            <span class="flash-word"><span data-en="flash">flits</span><svg class="flash-word__bolt" viewBox="0 0 60 34" aria-hidden="true"><path d="M34 2 6 20h13l-5 12 32-22H30l4-8z" fill="var(--flash)"/></svg></span>.
+            <span data-en="Websites at the speed of a">Websites met de snelheid van een</span>
+            <span class="flash-word" data-en="flash">flits</span>.
           </h1>
-          <p class="hero__lede" data-en="FlitzWeb designs and builds blazing-fast, sharp websites for ambitious brands. Strategy, design and code, built by hand.">
-            FlitzWeb ontwerpt en bouwt razendsnelle, scherpe websites voor ambitieuze
-            merken. Strategie, design en code, met de hand gebouwd.
+          <p class="hero__lede" data-en="We design and build blazing-fast, sharp websites for ambitious brands. Strategy, design and code, by hand.">
+            We ontwerpen en bouwen razendsnelle, scherpe websites voor ambitieuze
+            merken. Strategie, design en code, met de hand.
           </p>
 
-          <div class="hero__cta">
-            <button class="btn btn--primary btn--lg" data-open-booking>
-              <span data-en="Book a call">Plan een gesprek</span>
-              <svg class="btn__i" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <form class="ask" data-ask-form>
+            <label class="sr-only" for="hero-ask" data-en="Tell us about your project">Vertel over je project</label>
+            <input id="hero-ask" type="text" name="ask" autocomplete="off"
+              placeholder="Vertel kort over je project…" data-en-ph="Tell us briefly about your project…" />
+            <button class="ask__go" type="submit">
+              <span data-en="Start">Start</span>
+              <svg class="btn__i" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
-            <a class="btn btn--dark btn--lg" href="#work" data-en="See our work">
-              Bekijk ons werk
-            </a>
-          </div>
+          </form>
+
+          <p class="proof"><span class="pulse"></span> <span data-en="Just live:">Net live:</span> <a href="https://hakiki.nl" target="_blank" rel="noopener">Hakiki Döner
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__browser">
-            <div class="browser__bar">
-              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-              <span class="browser__url">flitzweb.nl</span>
-            </div>
-            <div class="browser__viewport hero-mock">
-              <div class="hm__nav"><span class="hm__logo"></span><span class="hm__links"></span><span class="hm__btn"></span></div>
-              <div class="hm__hero">
-                <div class="hm__lines"><span></span><span></span><span></span></div>
-                <div class="hm__art"></div>
-              </div>
-              <div class="hm__cards"><span></span><span></span><span></span></div>
-            </div>
-          </div>
-
-          <div class="badge badge--perf">
-            <span class="badge__num">98</span>
-            <span class="badge__label" data-en="Lighthouse score">Lighthouse score</span>
-          </div>
-          <div class="badge badge--ship">
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span data-en="Hand-built">Met de hand gebouwd</span>
+        <!-- SIGNATURE: animated energy-line + lightning bolt -->
+        <div class="hero__visual">
+          <div class="bolt" aria-hidden="true">
+            <svg viewBox="0 0 460 480">
+              <defs>
+                <linearGradient id="boltFill" x1="150" y1="60" x2="320" y2="430" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#FF7A4D"/>
+                  <stop offset=".55" stop-color="#FF5B34"/>
+                  <stop offset="1" stop-color="#E8471F"/>
+                </linearGradient>
+                <radialGradient id="glow" cx="50%" cy="46%" r="55%">
+                  <stop offset="0" stop-color="#FF5B34" stop-opacity=".28"/>
+                  <stop offset="1" stop-color="#FF5B34" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <circle class="bolt__aura" cx="235" cy="230" r="200" fill="url(#glow)"/>
+              <g class="bolt__group">
+                <path class="bolt__echo" d="M262 40 L150 250 h84 l-30 150 200-236 h-104 l38 -124 z"/>
+                <path class="flow" d="M175 470 C 120 430, 116 372, 168 352 C 214 334, 236 306, 198 268 C 165 235, 120 214, 152 168 C 180 128, 250 138, 250 92 C 250 68, 246 58, 258 46"/>
+                <path class="bolt__fill" fill="url(#boltFill)" d="M262 40 L150 250 h84 l-30 150 200-236 h-104 l38 -124 z"/>
+                <g class="spark"><circle cx="228" cy="250" r="6" fill="#FFE0D3"/></g>
+                <circle class="node" cx="168" cy="352" r="7" fill="#FF5B34"/>
+                <circle class="node node--2" cx="152" cy="168" r="6" fill="#2F5BFF"/>
+                <circle class="node node--3" cx="258" cy="46" r="8.5" fill="#FF5B34"/>
+              </g>
+            </svg>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ================= MARQUEE ================= -->
-    <section class="marquee" aria-label="Wat we doen">
-      <div class="marquee__track" data-marquee>
-        <span>Websites</span><i class="spark"></i>
-        <span>Webflow</span><i class="spark"></i>
-        <span data-en="Brand identity">Merkidentiteit</span><i class="spark"></i>
-        <span data-en="SEO &amp; growth">SEO &amp; groei</span><i class="spark"></i>
-        <span data-en="Design systems">Designsystemen</span><i class="spark"></i>
-        <span>Motion</span><i class="spark"></i>
-        <!-- duplicaat voor naadloze loop -->
-        <span>Websites</span><i class="spark"></i>
-        <span>Webflow</span><i class="spark"></i>
-        <span data-en="Brand identity">Merkidentiteit</span><i class="spark"></i>
-        <span data-en="SEO &amp; growth">SEO &amp; groei</span><i class="spark"></i>
-        <span data-en="Design systems">Designsystemen</span><i class="spark"></i>
-        <span>Motion</span><i class="spark"></i>
       </div>
     </section>
 
     <!-- ================= STUDIO / OVER ONS ================= -->
     <section class="studio" id="studio">
       <div class="wrap studio__grid">
-        <div class="studio__media" aria-hidden="true">
-          <div class="studio__photo studio__photo--a"></div>
-          <div class="studio__photo studio__photo--b"></div>
-          <div class="studio__chip">
-            <span class="studio__chip-num">100%</span>
-            <span class="studio__chip-txt" data-en="Hand-built code">Met de hand gebouwd</span>
-          </div>
-        </div>
         <div class="studio__copy">
-          <p class="eyebrow eyebrow--ink"><span class="eyebrow__dot"></span><span data-en="The studio">De studio</span></p>
-          <h2 class="h2" data-en="A compact studio, built for speed.">Een compacte studio, gebouwd voor snelheid.</h2>
-          <p class="lede-ink" data-en="We're a tight team of designers and developers who believe a great website shouldn't take a year. FlitzWeb pairs sharp strategy with fast, hand-built code, so your brand goes live while it still matters.">
-            We zijn een hecht team van designers en developers dat gelooft dat een goede
-            website geen jaar hoeft te duren. FlitzWeb combineert scherpe strategie met
+          <h2 class="h2" data-en="A compact studio, built for speed."><em>Een compacte</em> studio, gebouwd voor snelheid.</h2>
+          <p class="lede-ink" data-en="We're a small team of designers and developers who think a good website shouldn't take a year. We pair sharp strategy with fast, hand-built code, so your brand goes live while it still matters.">
+            We zijn een klein team van designers en developers dat vindt dat een goede
+            website geen jaar hoeft te duren. We combineren scherpe strategie met
             snelle, met de hand gebouwde code, zodat je merk live gaat wanneer het er
             nog toe doet.
           </p>
@@ -182,6 +159,24 @@
             <span data-en="Get in touch">Neem contact op</span>
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
+        </div>
+
+        <div class="studio__side">
+          <div class="principle">
+            <span class="principle__k" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M14 2 4 14h6l-2 8 12-14h-7l1-6z" fill="currentColor"/></svg></span>
+            <span class="principle__t" data-en="One team, no handoffs">Eén team, geen overdracht</span>
+            <p class="principle__d" data-en="Strategy, design and build under one roof. Fewer people between your idea and the live site.">Strategie, design en realisatie onder één dak. Minder mensen tussen jouw idee en de live site.</p>
+          </div>
+          <div class="principle">
+            <span class="principle__k" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M14 2 4 14h6l-2 8 12-14h-7l1-6z" fill="currentColor"/></svg></span>
+            <span class="principle__t" data-en="A clear price up front">Een heldere prijs vooraf</span>
+            <p class="principle__d" data-en="You know the price and the plan before we start. No surprises afterwards.">Je weet de prijs en de planning voordat we beginnen. Geen verrassingen achteraf.</p>
+          </div>
+          <div class="principle">
+            <span class="principle__k" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M14 2 4 14h6l-2 8 12-14h-7l1-6z" fill="currentColor"/></svg></span>
+            <span class="principle__t" data-en="Live in weeks, not months">Live in weken, niet maanden</span>
+            <p class="principle__d" data-en="From first call to launch in weeks. Fast to build and fast to load.">Van eerste gesprek tot livegang in weken. Snel gebouwd en snel geladen.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -191,74 +186,105 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p class="eyebrow eyebrow--ink"><span class="eyebrow__dot"></span><span data-en="What we do">Wat we doen</span></p>
-            <h2 class="h2" data-en="Everything your brand needs to stand out online.">Alles wat je merk nodig heeft om online op te vallen.</h2>
+            <h2 class="h2" data-en="What we sort out for you."><em>Wat we</em> voor je regelen.</h2>
           </div>
-          <p class="section-head__note" data-en="One team for strategy, design and build. No handoffs, no fuss. Just the work, delivered fast.">
-            Eén team voor strategie, design en realisatie. Geen overdrachten,
-            geen poespas. Gewoon het werk, snel opgeleverd.
+          <p class="section-head__note" data-en="No complicated words. Just what you get, and what it does for your business.">
+            Geen ingewikkelde woorden. Gewoon wat je krijgt, en wat het
+            voor je zaak doet.
           </p>
         </div>
 
         <ul class="accordion" data-accordion>
           <li class="acc__item is-open">
             <button class="acc__head" aria-expanded="true">
-              <span class="acc__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M9 22h6"/></svg></span>
-              <span class="acc__title">Websites &amp; Webflow</span>
+              <span class="acc__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></span>
+              <span class="acc__title" data-en="A website where customers find everything">Een website waar klanten alles vinden</span>
               <span class="acc__icon" aria-hidden="true"></span>
             </button>
             <div class="acc__panel">
-              <p data-en="Marketing sites designed to convert and built to load instantly. From copy and layout to a CMS your team can actually run.">Marketingsites ontworpen om te converteren en gebouwd om razendsnel te
-                laden. Van copy en layout tot een CMS waar je team écht mee overweg kan.</p>
-              <ul class="acc__tags"><li data-en="UX &amp; UI design">UX- &amp; UI-design</li><li data-en="Webflow build">Webflow-bouw</li><li>CMS &amp; blog</li><li>Analytics</li></ul>
+              <p data-en="Your opening hours, address, your menu or services and a button to call you. All of it clear and easy to read on a phone, because that's what your customers use.">Je openingstijden, adres, je menu of diensten en een knop om je te
+                bellen. Alles staat er duidelijk op en leest fijn op een telefoon, want
+                daar kijken je klanten op.</p>
+              <ul class="acc__tags"><li data-en="Opening hours">Openingstijden</li><li data-en="Menu or services">Menu of diensten</li><li data-en="Photos of your place">Foto's van je zaak</li><li data-en="Logo and colours">Logo en kleuren</li></ul>
             </div>
           </li>
           <li class="acc__item">
             <button class="acc__head" aria-expanded="false">
-              <span class="acc__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 6.3L21 11l-6.8 1.7L12 19l-2.2-6.3L3 11l6.8-1.7z"/></svg></span>
-              <span class="acc__title" data-en="Brand identity">Merkidentiteit</span>
+              <span class="acc__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.7 7-11a7 7 0 0 0-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <span class="acc__title" data-en="Easy to find on Google">Goed te vinden in Google</span>
               <span class="acc__icon" aria-hidden="true"></span>
             </button>
             <div class="acc__panel">
-              <p data-en="A logo is the start. We build the full system — type, colour, motion and guidelines — so your brand feels sharp everywhere.">Een logo is het begin. Wij bouwen het volledige systeem — typografie,
-                kleur, motion en richtlijnen — zodat je merk overal scherp overkomt.</p>
-              <ul class="acc__tags"><li data-en="Logo &amp; marks">Logo &amp; merktekens</li><li data-en="Design system">Designsysteem</li><li data-en="Guidelines">Richtlijnen</li><li>Social kit</li></ul>
+              <p data-en="Someone nearby searching for what you sell should end up at your place, not the competition's. We make sure Google understands your business and that you show up on the map.">Zoekt iemand in de buurt naar wat jij verkoopt? Dan wil je dat ze bij jou
+                uitkomen en niet bij de concurrent. Wij zorgen dat Google je zaak snapt
+                en dat je op de kaart staat.</p>
+              <ul class="acc__tags"><li>Google Maps</li><li data-en="Found in your area">Gevonden in je buurt</li><li data-en="Loads fast">Snel geladen</li><li data-en="Reviews">Reviews</li></ul>
             </div>
           </li>
           <li class="acc__item">
             <button class="acc__head" aria-expanded="false">
-              <span class="acc__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 16l4-5 3 3 5-7"/></svg></span>
-              <span class="acc__title" data-en="SEO &amp; growth">SEO &amp; groei</span>
+              <span class="acc__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg></span>
+              <span class="acc__title" data-en="More customers who call or order">Meer klanten die bellen of bestellen</span>
               <span class="acc__icon" aria-hidden="true"></span>
             </button>
             <div class="acc__panel">
-              <p data-en="Fast sites rank. We ship clean technical SEO, structured content and the measurement to prove it. And we keep tuning.">Snelle sites scoren. We leveren strakke technische SEO, gestructureerde
-                content en de meetgegevens om het te bewijzen. En we blijven bijsturen.</p>
-              <ul class="acc__tags"><li data-en="Technical SEO">Technische SEO</li><li>Content</li><li>Core Web Vitals</li><li data-en="Reporting">Rapportage</li></ul>
+              <p data-en="A good-looking website isn't enough. Calling you, finding your door or placing an order has to be so simple that nobody gives up halfway.">Een mooie website alleen is niet genoeg. Je bellen, je zaak vinden of iets
+                bestellen moet zó simpel zijn dat niemand halverwege afhaakt.</p>
+              <ul class="acc__tags"><li data-en="Call with one tap">Bellen met één tik</li><li data-en="Order online">Online bestellen</li><li data-en="Reservations">Reserveren</li><li>WhatsApp</li></ul>
+            </div>
+          </li>
+          <li class="acc__item">
+            <button class="acc__head" aria-expanded="false">
+              <span class="acc__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3l-6 6M14 4a4 4 0 0 0 5.5 5.5L21 8v6l-7 7H6l-3-3 7-7V4z"/></svg></span>
+              <span class="acc__title" data-en="We keep it up to date">Wij houden het bij</span>
+              <span class="acc__icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc__panel">
+              <p data-en="New prices, different opening hours or off on holiday? Send us a message and we'll put it online. You never have to touch anything technical yourself.">Andere prijzen, gewijzigde openingstijden of even op vakantie? Je stuurt
+                ons een bericht en wij zetten het online. Je hoeft zelf nooit iets
+                technisch te doen.</p>
+              <ul class="acc__tags"><li data-en="Changes">Aanpassingen</li><li data-en="Hosting">Hosting</li><li data-en="Security">Beveiliging</li><li data-en="Questions? Call us">Vragen? Bel ons</li></ul>
             </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- ================= WERK (binnenkort) ================= -->
-    <section class="work work--soon" id="work">
-      <div class="wrap work__soon">
-        <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span><span data-en="Work">Werk</span></p>
-        <h2 class="h2 h2--light" data-en="Our work is on the way.">Ons werk komt eraan.</h2>
-        <p class="work__soontext" data-en="We've just launched the studio. Become one of our first projects and see your work featured right here soon.">
-          We zijn net gestart met de studio. Word een van onze eerste projecten en
-          zie jouw werk hier binnenkort terug.
-        </p>
-        <button class="btn btn--flash btn--lg" data-open-booking>
-          <span data-en="Start your project">Start je project</span>
-          <svg class="btn__i" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
+    <!-- ================= WERK ================= -->
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="section-head section-head--light">
+          <div>
+            <h2 class="h2 h2--light" data-en="Recent work."><em>Recent</em> werk.</h2>
+          </div>
+          <p class="section-head__note" data-en="A small selection to start with. Real, live and fast.">Een kleine selectie om mee te beginnen. Echt, live en snel.</p>
+        </div>
 
-        <div class="work__tiles" aria-hidden="true">
-          <div class="mock mock--brand"><div class="mk-bar"><span></span><span></span><span></span></div><div class="mk-body mk-brand"></div></div>
-          <div class="mock mock--saas"><div class="mk-bar"><span></span><span></span><span></span></div><div class="mk-body mk-saas"></div></div>
-          <div class="mock mock--portfolio"><div class="mk-bar"><span></span><span></span><span></span></div><div class="mk-body mk-portfolio"></div></div>
+        <article class="case">
+          <div class="case__shot">
+            <div class="browser">
+              <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">hakiki.nl</span></div>
+              <img src="assets/work/hakiki-doner.jpg" width="1600" height="1311" loading="lazy"
+                alt="Homepage van de Hakiki Döner-website met de kop 'De echte döner van Woensel' en de gevel van de zaak." />
+            </div>
+          </div>
+          <div class="case__body">
+            <h3 class="case__name">Hakiki <em>Döner</em></h3>
+            <p class="case__desc" data-en="A fast site for 'the real döner of Woensel'. Customers see the menu and opening hours straight away, and order in two taps. Live in weeks.">Een snelle site voor 'de echte döner van Woensel'. Klanten zien direct het menu en de openingstijden, en bestellen in twee tikken. Live in weken.</p>
+            <ul class="case__tags"><li data-en="Website">Website</li><li data-en="Photos">Foto's</li><li data-en="Menu online">Menu online</li><li data-en="Found on Google">Vindbaar in Google</li></ul>
+            <a class="case__link" href="https://hakiki.nl" target="_blank" rel="noopener">
+              <span data-en="View the live site">Bekijk de live site</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <div class="work__more">
+          <p data-en="Your project could be the next one here.">Jouw project kan hier de volgende zijn.</p>
+          <button class="btn btn--flash" data-open-booking>
+            <span data-en="Start your project">Start je project</span>
+            <svg class="btn__i" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
       </div>
     </section>
@@ -267,8 +293,7 @@
     <section class="book" id="contact">
       <div class="wrap book__grid">
         <div class="book__intro">
-          <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span><span data-en="Book a call">Plan een gesprek</span></p>
-          <h2 class="h2 h2--light" data-en="Let's build something fast together.">Laten we samen iets snels bouwen.</h2>
+                    <h2 class="h2" data-en="Let's build something fast together.">Laten we samen <em>iets snels</em> bouwen.</h2>
           <p class="book__lede" data-en="Book a free 30-minute call. We'll talk through your project, the timeline and whether we're the right studio to build it.">Plan een gratis gesprek van 30 minuten. We bespreken je
             project, de planning en of wij de juiste studio zijn om het te bouwen.</p>
 
@@ -294,6 +319,8 @@
             <label for="bf-website">Laat dit veld leeg</label>
             <input id="bf-website" name="website" type="text" tabindex="-1" autocomplete="off" />
           </div>
+          <!-- Elk gesprek gaat over een nieuwe website, dus geen keuzemenu meer -->
+          <input type="hidden" name="type" value="Nieuwe website" />
           <div class="field field--half">
             <label for="bf-name" data-en="Name">Naam</label>
             <input id="bf-name" name="name" type="text" autocomplete="name" required placeholder="Jan Jansen" data-en-ph="Jane Doe" />
@@ -304,22 +331,9 @@
             <input id="bf-email" name="email" type="email" autocomplete="email" required placeholder="jan@bedrijf.nl" data-en-ph="jane@company.com" />
             <span class="field__err" data-err></span>
           </div>
-          <div class="field field--half">
+          <div class="field field--full">
             <label for="bf-company" data-en="Company">Bedrijf</label>
             <input id="bf-company" name="company" type="text" autocomplete="organization" placeholder="Bedrijf B.V." data-en-ph="Company Inc." />
-          </div>
-          <div class="field field--half">
-            <label for="bf-type">Project</label>
-            <div class="select-wrap">
-              <select id="bf-type" name="type">
-                <option data-en="New website">Nieuwe website</option>
-                <option>Redesign</option>
-                <option data-en="Brand identity">Merkidentiteit</option>
-                <option data-en="SEO &amp; growth">SEO &amp; groei</option>
-                <option data-en="Something else">Iets anders</option>
-              </select>
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
           </div>
 
           <fieldset class="field field--full booking__when">
@@ -362,7 +376,7 @@
   <footer class="foot">
     <div class="wrap">
       <div class="foot__cta">
-        <h2 class="foot__big" data-en="Ready to build?">Klaar om te bouwen?</h2>
+        <h2 class="foot__big" data-en="Ready to build?">Klaar om te <em>bouwen</em>?</h2>
         <button class="btn btn--primary btn--lg" data-open-booking>
           <span data-en="Book a call">Plan een gesprek</span>
           <svg class="btn__i" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -373,7 +387,7 @@
         <div class="foot__brandcol">
           <a class="brand brand--light" href="#top" aria-label="FlitzWeb home">
             <span class="brand__mark" aria-hidden="true">
-              <svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="fbFoot" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2F5BFF"/><stop offset="1" stop-color="#FF5B34"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="#fff"/><path d="M18 5 8 18h6l-2 9 12-14h-7l1-8z" fill="url(#fbFoot)"/></svg>
+              <svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="fbFoot" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF7A4D"/><stop offset="1" stop-color="#E8471F"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="var(--paper)"/><path d="M18 5 8 18h6l-2 9 12-14h-7l1-8z" fill="url(#fbFoot)"/></svg>
             </span>
             <span class="brand__word">Flitz<span class="brand__web">Web</span></span>
           </a>
@@ -389,9 +403,10 @@
         </nav>
         <nav class="foot__col" aria-label="Diensten">
           <h4 data-en="Services">Diensten</h4>
-          <a href="#services">Websites</a>
-          <a href="#services" data-en="Brand identity">Merkidentiteit</a>
-          <a href="#services" data-en="SEO &amp; growth">SEO &amp; groei</a>
+          <a href="#services" data-en="A new website">Een nieuwe website</a>
+          <a href="#services" data-en="Found on Google">Vindbaar in Google</a>
+          <a href="#services" data-en="Order or call online">Online bestellen of bellen</a>
+          <a href="#services" data-en="Keeping it up to date">Bijhouden en onderhoud</a>
         </nav>
         <nav class="foot__col" aria-label="Contact">
           <h4>Contact</h4>
@@ -416,7 +431,6 @@
       <button class="modal__close" aria-label="Sluiten" data-close-booking>
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
-      <p class="eyebrow eyebrow--ink"><span class="eyebrow__dot"></span><span data-en="Book a call">Plan een gesprek</span></p>
       <h2 class="h3" id="modal-title" data-en="Book a free 30-minute call">Plan een gratis gesprek van 30 minuten</h2>
       <p class="modal__lede" data-en="Pick a day and time that suits you. We'll confirm by email within one business day.">Kies een dag en tijd die jou uitkomt. We bevestigen per e-mail binnen één werkdag.</p>
 
@@ -426,6 +440,8 @@
           <label for="mf-website">Laat dit veld leeg</label>
           <input id="mf-website" name="website" type="text" tabindex="-1" autocomplete="off" />
         </div>
+        <!-- Elk gesprek gaat over een nieuwe website, dus geen keuzemenu meer -->
+        <input type="hidden" name="type" value="Nieuwe website" />
         <div class="field">
           <label for="mf-name" data-en="Name">Naam</label>
           <input id="mf-name" name="name" type="text" autocomplete="name" required placeholder="Jan Jansen" data-en-ph="Jane Doe" />
@@ -440,20 +456,6 @@
           <label for="mf-company" data-en="Company">Bedrijf</label>
           <input id="mf-company" name="company" type="text" autocomplete="organization" placeholder="Bedrijf B.V." data-en-ph="Company Inc." />
         </div>
-        <div class="field">
-          <label for="mf-type">Project</label>
-          <div class="select-wrap">
-            <select id="mf-type" name="type">
-              <option data-en="New website">Nieuwe website</option>
-              <option>Redesign</option>
-              <option data-en="Brand identity">Merkidentiteit</option>
-              <option data-en="SEO &amp; growth">SEO &amp; groei</option>
-              <option data-en="Something else">Iets anders</option>
-            </select>
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </div>
-
         <fieldset class="field booking__when">
           <legend data-en="Pick a day">Kies een dag</legend>
           <div class="daypick" data-daypick role="group" aria-label="Kies een dag"></div>
@@ -494,5 +496,9 @@
   <script defer src="/_vercel/speed-insights/script.js"></script>
   <script src="analytics.js"></script>
   <script src="script.js"></script>
+
+  <!-- Cloudflare Web Analytics -->
+   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "18a6906916f4487aa7f0998a82124753"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>

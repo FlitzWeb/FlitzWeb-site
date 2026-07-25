@@ -394,9 +394,25 @@
   $$("[data-open-booking]").forEach((b) => b.addEventListener("click", openModal));
   $$("[data-close-booking]").forEach((b) => b.addEventListener("click", closeModal));
 
+  /* ---------- Hero ask → open booking with the message prefilled ---------- */
+  const askForm = $("[data-ask-form]");
+  if (askForm) {
+    askForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = $("input", askForm);
+      const val = input ? input.value.trim() : "";
+      openModal();
+      if (modal) {
+        const ta = modal.querySelector('textarea[name="message"]');
+        if (ta) ta.value = val;
+      }
+      if (window.track) window.track("hero_ask_submit");
+    });
+  }
+
   /* ---------- Scroll reveal ---------- */
   if (!reduceMotion && "IntersectionObserver" in window) {
-    const targets = [".studio__copy", ".section-head", ".acc__item", ".step", ".work__soon", ".book__intro", ".book__form", ".foot__cta"];
+    const targets = [".studio__copy", ".principle", ".section-head", ".acc__item", ".case", ".work__more", ".book__intro", ".book__form", ".foot__cta"];
     const els = [];
     targets.forEach((sel) => $$(sel).forEach((el) => els.push(el)));
     els.forEach((el, i) => {
