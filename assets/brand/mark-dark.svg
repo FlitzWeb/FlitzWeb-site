@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="36 166 276 202" role="img" aria-label="FlitzWeb">
+  <defs>
+    <linearGradient id="fwmarkd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <g transform="rotate(-14 228 256)">
+    <rect x="64" y="196" width="64" height="22" rx="11" fill="url(#fwmarkd)" opacity="0.3"/>
+    <rect x="52" y="250" width="94" height="22" rx="11" fill="url(#fwmarkd)" opacity="0.55"/>
+    <rect x="70" y="304" width="72" height="22" rx="11" fill="url(#fwmarkd)" opacity="0.78"/>
+    <path d="M156,152 L156,344 L204,296 L240,360 L276,344 L240,284 L300,284 Z" fill="url(#fwmarkd)"/>
+  </g>
+</svg>

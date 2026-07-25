@@ -8,7 +8,7 @@
   <meta name="keywords" content="website laten maken, webdesign, webdesign bureau, webstudio, snelle website, website bouwen, Nederland" />
   <meta name="author" content="FlitzWeb" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#F6F2EC" />
+  <meta name="theme-color" content="#F5F8FC" />
   <meta name="google-site-verification" content="E0Dkwbc_m0GgUVQjTGqLSlgKfRZBNFlFOZMwC8z7erk" />
   <link rel="canonical" href="https://www.flitzweb.nl/" />
 
@@ -40,7 +40,7 @@
         "url": "https://www.flitzweb.nl/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.flitzweb.nl/assets/logo-mark.svg"
+          "url": "https://www.flitzweb.nl/assets/brand/lockup.svg"
         },
         "image": "https://www.flitzweb.nl/assets/og-flitzweb.jpg",
         "email": "info@flitzweb.nl",
@@ -82,7 +82,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,320..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='6' y1='4' x2='26' y2='28' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FF7A4D'/%3E%3Cstop offset='1' stop-color='%23E8471F'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='%231C1813'/%3E%3Cpath d='M18 5 8 18h6l-2 9 12-14h-7l1-8z' fill='url(%23g)'/%3E%3C/svg%3E" />
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="assets/brand/favicon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
 </head>
 <body>
   <a class="skip-link" href="#main" data-en="Skip to content">Naar inhoud</a>
@@ -92,7 +95,7 @@
     <div class="wrap nav__inner">
       <a class="brand" href="#top" aria-label="FlitzWeb home">
         <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="30" height="30"><defs><linearGradient id="fbNav" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF7A4D"/><stop offset="1" stop-color="#E8471F"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="var(--ink-deep)"/><path d="M18 5 8 18h6l-2 9 12-14h-7l1-8z" fill="url(#fbNav)"/></svg>
+          <img src="assets/brand/mark.svg" width="38" height="28" alt="" />
         </span>
         <span class="brand__word">Flitz<span class="brand__web">Web</span></span>
       </a>
@@ -158,30 +161,38 @@
             <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
         </div>
 
-        <!-- SIGNATURE: animated energy-line + lightning bolt -->
+        <!-- SIGNATURE: the logo mark, drawn — same geometry as assets/brand/mark.svg -->
         <div class="hero__visual">
           <div class="bolt" aria-hidden="true">
             <svg viewBox="0 0 460 480">
               <defs>
-                <linearGradient id="boltFill" x1="150" y1="60" x2="320" y2="430" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#FF7A4D"/>
-                  <stop offset=".55" stop-color="#FF5B34"/>
-                  <stop offset="1" stop-color="#E8471F"/>
+                <linearGradient id="markFill" x1="52" y1="140" x2="300" y2="370" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#3B82F6"/>
+                  <stop offset="1" stop-color="#06B6D4"/>
                 </linearGradient>
                 <radialGradient id="glow" cx="50%" cy="46%" r="55%">
-                  <stop offset="0" stop-color="#FF5B34" stop-opacity=".28"/>
-                  <stop offset="1" stop-color="#FF5B34" stop-opacity="0"/>
+                  <stop offset="0" stop-color="#3B82F6" stop-opacity=".26"/>
+                  <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
                 </radialGradient>
               </defs>
-              <circle class="bolt__aura" cx="235" cy="230" r="200" fill="url(#glow)"/>
-              <g class="bolt__group">
-                <path class="bolt__echo" d="M262 40 L150 250 h84 l-30 150 200-236 h-104 l38 -124 z"/>
-                <path class="flow" d="M175 470 C 120 430, 116 372, 168 352 C 214 334, 236 306, 198 268 C 165 235, 120 214, 152 168 C 180 128, 250 138, 250 92 C 250 68, 246 58, 258 46"/>
-                <path class="bolt__fill" fill="url(#boltFill)" d="M262 40 L150 250 h84 l-30 150 200-236 h-104 l38 -124 z"/>
-                <g class="spark"><circle cx="228" cy="250" r="6" fill="#FFE0D3"/></g>
-                <circle class="node" cx="168" cy="352" r="7" fill="#FF5B34"/>
-                <circle class="node node--2" cx="152" cy="168" r="6" fill="#2F5BFF"/>
-                <circle class="node node--3" cx="258" cy="46" r="8.5" fill="#FF5B34"/>
+              <circle class="bolt__aura" cx="235" cy="240" r="200" fill="url(#glow)"/>
+              <g transform="translate(230,240) scale(1.35) translate(-176,-256)">
+                <g class="bolt__group">
+                  <g transform="rotate(-14 228 256)">
+                    <path class="bolt__echo" d="M156,152 L156,344 L204,296 L240,360 L276,344 L240,284 L300,284 Z"/>
+                    <line class="trail trail--1" x1="75" y1="207" x2="117" y2="207" pathLength="1" stroke="url(#markFill)" stroke-width="22" opacity=".3"/>
+                    <line class="trail trail--2" x1="63" y1="261" x2="135" y2="261" pathLength="1" stroke="url(#markFill)" stroke-width="22" opacity=".55"/>
+                    <line class="trail trail--3" x1="81" y1="315" x2="131" y2="315" pathLength="1" stroke="url(#markFill)" stroke-width="22" opacity=".78"/>
+                    <path class="flow" pathLength="1" d="M156,152 L156,344 L204,296 L240,360 L276,344 L240,284 L300,284 Z"/>
+                    <path class="bolt__fill" fill="url(#markFill)" d="M156,152 L156,344 L204,296 L240,360 L276,344 L240,284 L300,284 Z"/>
+                    <g class="spark"><circle cx="34" cy="207" r="5" fill="#60A5FA"/></g>
+                    <g class="spark spark--2"><circle cx="26" cy="261" r="6" fill="#22D3EE"/></g>
+                    <g class="spark spark--3"><circle cx="44" cy="315" r="4.5" fill="#60A5FA"/></g>
+                    <circle class="node" cx="156" cy="152" r="8.5" fill="#3B82F6"/>
+                    <circle class="node node--2" cx="300" cy="284" r="6" fill="#06B6D4"/>
+                    <circle class="node node--3" cx="240" cy="360" r="7" fill="#3B82F6"/>
+                  </g>
+                </g>
               </g>
             </svg>
           </div>
@@ -193,7 +204,7 @@
     <section class="studio" id="studio">
       <div class="wrap studio__grid">
         <div class="studio__copy">
-          <h2 class="h2" data-en="A compact studio, built for speed."><em>Een compacte</em> studio, gebouwd voor snelheid.</h2>
+          <h2 class="h2" data-en="&lt;em&gt;A compact&lt;/em&gt; studio, built for speed."><em>Een compacte</em> studio, gebouwd voor snelheid.</h2>
           <p class="lede-ink" data-en="We're a small team of designers and developers who think a good website shouldn't take a year. We pair sharp strategy with fast, hand-built code, so your brand goes live while it still matters.">
             We zijn een klein team van designers en developers dat vindt dat een goede
             website geen jaar hoeft te duren. We combineren scherpe strategie met
@@ -208,17 +219,17 @@
 
         <div class="studio__side">
           <div class="principle">
-            <span class="principle__k" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M14 2 4 14h6l-2 8 12-14h-7l1-6z" fill="currentColor"/></svg></span>
+            <span class="principle__k" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5.1 2 5.1 20.5 9.7 15.9 13.2 22 16.6 20.5 13.2 14.7 18.9 14.7 Z" fill="currentColor"/></svg></span>
             <span class="principle__t" data-en="One team, no handoffs">Eén team, geen overdracht</span>
             <p class="principle__d" data-en="Strategy, design and build under one roof. Fewer people between your idea and the live site.">Strategie, design en realisatie onder één dak. Minder mensen tussen jouw idee en de live site.</p>
           </div>
           <div class="principle">
-            <span class="principle__k" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M14 2 4 14h6l-2 8 12-14h-7l1-6z" fill="currentColor"/></svg></span>
+            <span class="principle__k" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5.1 2 5.1 20.5 9.7 15.9 13.2 22 16.6 20.5 13.2 14.7 18.9 14.7 Z" fill="currentColor"/></svg></span>
             <span class="principle__t" data-en="A clear price up front">Een heldere prijs vooraf</span>
             <p class="principle__d" data-en="You know the price and the plan before we start. No surprises afterwards.">Je weet de prijs en de planning voordat we beginnen. Geen verrassingen achteraf.</p>
           </div>
           <div class="principle">
-            <span class="principle__k" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M14 2 4 14h6l-2 8 12-14h-7l1-6z" fill="currentColor"/></svg></span>
+            <span class="principle__k" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5.1 2 5.1 20.5 9.7 15.9 13.2 22 16.6 20.5 13.2 14.7 18.9 14.7 Z" fill="currentColor"/></svg></span>
             <span class="principle__t" data-en="Live in weeks, not months">Live in weken, niet maanden</span>
             <p class="principle__d" data-en="From first call to launch in weeks. Fast to build and fast to load.">Van eerste gesprek tot livegang in weken. Snel gebouwd en snel geladen.</p>
           </div>
@@ -231,7 +242,7 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2 class="h2" data-en="What we sort out for you."><em>Wat we</em> voor je regelen.</h2>
+            <h2 class="h2" data-en="&lt;em&gt;What we&lt;/em&gt; sort out for you."><em>Wat we</em> voor je regelen.</h2>
           </div>
           <p class="section-head__note" data-en="No complicated words. Just what you get, and what it does for your business.">
             Geen ingewikkelde woorden. Gewoon wat je krijgt, en wat het
@@ -300,7 +311,7 @@
       <div class="wrap">
         <div class="section-head section-head--light">
           <div>
-            <h2 class="h2 h2--light" data-en="Recent work."><em>Recent</em> werk.</h2>
+            <h2 class="h2 h2--light" data-en="&lt;em&gt;Recent&lt;/em&gt; work."><em>Recent</em> werk.</h2>
           </div>
           <p class="section-head__note" data-en="A small selection to start with. Real, live and fast.">Een kleine selectie om mee te beginnen. Echt, live en snel.</p>
         </div>
@@ -338,7 +349,7 @@
     <section class="book" id="contact">
       <div class="wrap book__grid">
         <div class="book__intro">
-                    <h2 class="h2" data-en="Let's build something fast together.">Laten we samen <em>iets snels</em> bouwen.</h2>
+                    <h2 class="h2" data-en="Let&#39;s build &lt;em&gt;something fast&lt;/em&gt; together.">Laten we samen <em>iets snels</em> bouwen.</h2>
           <p class="book__lede" data-en="Book a free 30-minute call. We'll talk through your project, the timeline and whether we're the right studio to build it.">Plan een gratis gesprek van 30 minuten. We bespreken je
             project, de planning en of wij de juiste studio zijn om het te bouwen.</p>
 
@@ -421,7 +432,7 @@
   <footer class="foot">
     <div class="wrap">
       <div class="foot__cta">
-        <h2 class="foot__big" data-en="Ready to build?">Klaar om te <em>bouwen</em>?</h2>
+        <h2 class="foot__big" data-en="Ready to &lt;em&gt;build&lt;/em&gt;?">Klaar om te <em>bouwen</em>?</h2>
         <button class="btn btn--primary btn--lg" data-open-booking>
           <span data-en="Book a call">Plan een gesprek</span>
           <svg class="btn__i" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -432,7 +443,7 @@
         <div class="foot__brandcol">
           <a class="brand brand--light" href="#top" aria-label="FlitzWeb home">
             <span class="brand__mark" aria-hidden="true">
-              <svg viewBox="0 0 32 32" width="28" height="28"><defs><linearGradient id="fbFoot" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF7A4D"/><stop offset="1" stop-color="#E8471F"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="var(--paper)"/><path d="M18 5 8 18h6l-2 9 12-14h-7l1-8z" fill="url(#fbFoot)"/></svg>
+              <img src="assets/brand/mark-dark.svg" width="38" height="28" alt="" />
             </span>
             <span class="brand__word">Flitz<span class="brand__web">Web</span></span>
           </a>
