@@ -56,16 +56,18 @@
 
   let lang = "nl";
   const bookings = []; // registered booking forms, so we can relabel on language change
+  const nlHtml = new WeakMap(); // original Dutch markup per translated element
 
   /* ---------- Language switch ---------- */
   function applyLang(next) {
     lang = next === "en" ? "en" : "nl";
     document.documentElement.lang = lang;
 
-    // text nodes
+    // text nodes — innerHTML, not textContent, so the <em> accents in the
+    // headings survive a language switch (they carry the brand colour)
     $$("[data-en]").forEach((el) => {
-      if (el.dataset.nlText == null) el.dataset.nlText = el.textContent;
-      el.textContent = lang === "en" ? el.getAttribute("data-en") : el.dataset.nlText;
+      if (!nlHtml.has(el)) nlHtml.set(el, el.innerHTML);
+      el.innerHTML = lang === "en" ? el.getAttribute("data-en") : nlHtml.get(el);
     });
     // placeholders
     $$("[data-en-ph]").forEach((el) => {

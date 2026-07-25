@@ -6,6 +6,10 @@ serverless boekingssysteem, gehost op Vercel.
 ## Structuur
 - `index.html`, `styles.css`, `script.js` — de site zelf (NL/EN taalwissel in JS).
 - `analytics.js` — dunne wrapper rond Vercel Web Analytics.
+- `assets/brand/` — de logofamilie: `mark.svg` (licht) en `mark-dark.svg` voor
+  donkere vlakken, `lockup*.svg` voor het volledige logo, favicons en
+  `apple-touch-icon.png`. Het kleurenpalet in `styles.css` is hiervan afgeleid:
+  blauw `#3B82F6` → cyaan `#06B6D4`, slate `#0F172A`.
 - `api/` — Vercel serverless functions voor het inplannen van gesprekken:
   - `availability.js` — vrije tijdslots ophalen (Google Calendar free/busy).
   - `book.js` — een boeking maken + bevestigingsmails versturen.
