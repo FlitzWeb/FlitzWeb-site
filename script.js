@@ -298,6 +298,7 @@
         company: (data.get("company") || "").toString().trim(),
         type: (data.get("type") || "").toString().trim(),
         message: (data.get("message") || "").toString().trim(),
+        website: (data.get("website") || "").toString(), // honeypot, should stay empty
         date: st.day.key,
         time: st.time,
       };
@@ -390,26 +391,25 @@
   $$("[data-open-booking]").forEach((b) => b.addEventListener("click", openModal));
   $$("[data-close-booking]").forEach((b) => b.addEventListener("click", closeModal));
 
-  /* ---------- Newsletter (footer) ---------- */
-  const news = $("[data-news]");
-  if (news) {
-    news.addEventListener("submit", (e) => {
+  /* ---------- Hero ask → open booking with the message prefilled ---------- */
+  const askForm = $("[data-ask-form]");
+  if (askForm) {
+    askForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const input = $("input", news);
-      if (!input.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
-        input.focus();
-        return;
+      const input = $("input", askForm);
+      const val = input ? input.value.trim() : "";
+      openModal();
+      if (modal) {
+        const ta = modal.querySelector('textarea[name="message"]');
+        if (ta) ta.value = val;
       }
-      const note = $("[data-news-note]");
-      if (note) note.hidden = false;
-      if (window.track) window.track("newsletter_signup");
-      news.reset();
+      if (window.track) window.track("hero_ask_submit");
     });
   }
 
   /* ---------- Scroll reveal ---------- */
   if (!reduceMotion && "IntersectionObserver" in window) {
-    const targets = [".studio__copy", ".section-head", ".acc__item", ".step", ".work__soon", ".book__intro", ".book__form", ".foot__cta"];
+    const targets = [".studio__copy", ".principle", ".section-head", ".acc__item", ".case", ".work__more", ".book__intro", ".book__form", ".foot__cta"];
     const els = [];
     targets.forEach((sel) => $$(sel).forEach((el) => els.push(el)));
     els.forEach((el, i) => {
