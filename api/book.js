@@ -11,6 +11,14 @@ export default async function handler(req, res) {
   }
 
   const body = req.body || {};
+  // Honeypot: a hidden "website" field that real visitors never see. If it's
+  // filled, it's a bot — drop it silently with a fake success so it doesn't
+  // learn to adapt, and never touch the calendar or send any email.
+  if ((body.website || "").toString().trim()) {
+    res.status(200).json({ ok: true });
+    return;
+  }
+
   const name = (body.name || "").toString().trim();
   const email = (body.email || "").toString().trim();
   const company = (body.company || "").toString().trim();
