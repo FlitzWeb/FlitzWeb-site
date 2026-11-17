@@ -245,43 +245,22 @@ ul,ol{ list-style:none; padding:0; }
 .proof .pulse{ width:8px; height:8px; border-radius:50%; background:#37b24d; animation:live 2.4s var(--ease) infinite; }
 @keyframes live{ 0%{ box-shadow:0 0 0 0 rgba(55,178,77,.45);} 70%{ box-shadow:0 0 0 8px rgba(55,178,77,0);} 100%{ box-shadow:0 0 0 0 rgba(55,178,77,0);} }
 
-/* ---------- SIGNATURE: the logo mark, drawn ----------
-   The speed lines wipe in, the cursor outline draws itself,
-   then the gradient strikes through it. Same geometry as
-   assets/brand/mark.svg, blown up. */
+/* ---------- Hero visual: real client sites in devices ----------
+   Laptop and phone are drawn in CSS around real screenshots.
+   The logo cursor floats over the corner of the laptop. */
 .hero__visual{ position:relative; }
-.bolt{ position:relative; display:grid; place-items:center; min-height:clamp(340px,42vw,540px); }
-.bolt svg{ width:100%; height:auto; max-width:520px; overflow:visible; }
-.bolt__aura{ animation:aura 6s ease-in-out infinite; transform-origin:center; }
+.devices{ position:relative; width:100%; max-width:580px; margin-inline:auto; padding:7% 0 9%; }
+.devices__aura{ position:absolute; inset:-6% -4%; background:radial-gradient(closest-side, rgba(59,130,246,.24), rgba(59,130,246,0)); animation:aura 6s ease-in-out infinite; }
 @keyframes aura{ 0%,100%{ opacity:.5; } 50%{ opacity:.9; } }
-.bolt__echo{ fill:var(--brand); opacity:.09; transform:translate(16px,-9px); transform-box:fill-box; transform-origin:center; }
-
-/* speed lines — every element carries pathLength="1" so one keyframe fits all */
-.trail{ fill:none; stroke-linecap:round; stroke-dasharray:1; stroke-dashoffset:1; animation:draw 1s var(--ease) forwards; }
-.trail--1{ animation-delay:.1s; }
-.trail--2{ animation-delay:.26s; }
-.trail--3{ animation-delay:.42s; }
-
-.flow{
-  fill:none; stroke:var(--ink); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;
-  stroke-dasharray:1; stroke-dashoffset:1; opacity:.85;
-  animation:draw 1.5s var(--ease) .45s forwards, fade-out .45s var(--ease) 1.95s forwards;
-}
-@keyframes draw{ to{ stroke-dashoffset:0; } }
-@keyframes fade-out{ to{ opacity:0; } }
-.bolt__fill{ opacity:0; transform-box:fill-box; transform-origin:center; animation:strike .5s var(--ease) 1.85s forwards; }
-@keyframes strike{ 0%{ opacity:0; transform:scale(.9);} 60%{ opacity:1; transform:scale(1.03);} 100%{ opacity:1; transform:scale(1);} }
-.bolt__group{ animation:floaty 7s ease-in-out 2.4s infinite; transform-origin:center; }
+.laptop{ position:relative; width:82%; margin-left:13%; }
+.laptop__screen{ background:var(--ink-deep); padding:2.4% 2.4% 3%; border-radius:16px 16px 0 0; box-shadow:0 30px 60px -30px rgba(15,23,42,.55); }
+.laptop__screen img{ display:block; width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; object-position:top; border-radius:6px; }
+.laptop__base{ position:relative; width:114%; margin-left:-7%; height:14px; background:linear-gradient(#E3EAF3,#B7C3D4); border-radius:2px 2px 14px 14px; box-shadow:0 18px 30px -16px rgba(15,23,42,.45); }
+.laptop__base::after{ content:""; position:absolute; left:50%; top:0; width:16%; height:5px; transform:translateX(-50%); background:#A9B6C9; border-radius:0 0 6px 6px; }
+.phone{ position:absolute; left:1%; bottom:0; width:27%; background:var(--ink-deep); padding:1.5%; border-radius:26px; box-shadow:0 26px 50px -22px rgba(15,23,42,.7), 0 0 0 1px rgba(255,255,255,.08) inset; }
+.phone img{ display:block; width:100%; height:auto; aspect-ratio:9/19; object-fit:cover; object-position:top; border-radius:19px; }
+.devices__mark{ position:absolute; right:3%; bottom:13%; width:17%; height:auto; overflow:visible; filter:drop-shadow(0 12px 16px rgba(37,99,235,.4)); animation:floaty 7s ease-in-out infinite; }
 @keyframes floaty{ 0%,100%{ transform:translateY(0) rotate(0);} 50%{ transform:translateY(-12px) rotate(-.5deg);} }
-/* particles streaming off the back of the mark */
-.spark{ animation:spark 3.6s var(--ease) 2.6s infinite; }
-.spark--2{ animation-delay:3.4s; }
-.spark--3{ animation-delay:4.3s; }
-@keyframes spark{ 0%{ opacity:0; transform:translateX(30px);} 14%{ opacity:1;} 55%{ opacity:0; transform:translateX(-38px);} 100%{ opacity:0;} }
-.node{ animation:nodepulse 3s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
-.node--2{ animation-delay:.9s; }
-.node--3{ animation-delay:1.7s; }
-@keyframes nodepulse{ 0%,100%{ transform:scale(1); opacity:.9;} 50%{ transform:scale(1.35); opacity:1;} }
 
 /* =========================================================
    SECTION HEAD (shared)
@@ -479,9 +458,6 @@ ul,ol{ list-style:none; padding:0; }
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
-  .flow{ stroke-dashoffset:0; opacity:0; }
-  .trail{ stroke-dashoffset:0; }
-  .bolt__fill{ opacity:1; }
   [data-reveal]{ opacity:1; transform:none; }
 }
 
@@ -498,8 +474,7 @@ ul,ol{ list-style:none; padding:0; }
 }
 @media (max-width:900px){
   .hero__grid{ grid-template-columns:1fr; }
-  .bolt{ order:-1; min-height:250px; margin-bottom:4px; }
-  .bolt svg{ max-width:300px; }
+  .devices{ max-width:440px; margin-top:28px; }
 }
 @media (max-width:620px){
   .section-head{ flex-direction:column; align-items:flex-start; gap:16px; }
