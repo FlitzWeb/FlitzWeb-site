@@ -14,6 +14,9 @@
   "preview_urls": true,
   "previews": {},
   "observability": { "enabled": true },
+  // The booking settings live in the dashboard (Variables and secrets). Never let a
+  // deploy remove them, also if one was saved as plain text instead of a secret.
+  "keep_vars": true,
   "routes": [
     { "pattern": "flitzweb.nl", "custom_domain": true },
     { "pattern": "www.flitzweb.nl", "custom_domain": true }
