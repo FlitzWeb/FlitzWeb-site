@@ -1,0 +1,24 @@
+// Cloudflare hosting for flitzweb.nl. Push to main = live (Workers Builds runs
+// `npx wrangler deploy`); other branches, such as `concept`, get their own
+// preview address on workers.dev (`npx wrangler preview`).
+// Booking secrets (GOOGLE_*, RESEND_API_KEY, BOOKING_*) are set in the
+// Cloudflare dashboard or with `npx wrangler secret put NAME`, never in this file.
+{
+  "name": "flitzweb-site",
+  "main": "./cloudflare/worker.js",
+  "compatibility_date": "2026-11-13",
+  // api/_lib/businessHours.js reads process.env (shared with the Vercel version).
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": "./", "binding": "ASSETS", "html_handling": "none", "not_found_handling": "none", "run_worker_first": true },
+  "workers_dev": false,
+  "preview_urls": true,
+  "previews": {},
+  "observability": { "enabled": true },
+  // The booking settings live in the dashboard (Variables and secrets). Never let a
+  // deploy remove them, also if one was saved as plain text instead of a secret.
+  "keep_vars": true,
+  "routes": [
+    { "pattern": "flitzweb.nl", "custom_domain": true },
+    { "pattern": "www.flitzweb.nl", "custom_domain": true }
+  ]
+}
