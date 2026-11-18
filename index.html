@@ -161,39 +161,20 @@
             <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
         </div>
 
-        <!-- SIGNATURE: the logo mark, drawn — same geometry as assets/brand/mark.svg -->
+        <!-- Real client sites in devices, with the logo cursor pointing at the screen -->
         <div class="hero__visual">
-          <div class="bolt" aria-hidden="true">
-            <svg viewBox="0 0 460 480">
-              <defs>
-                <linearGradient id="markFill" x1="52" y1="140" x2="300" y2="370" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#3B82F6"/>
-                  <stop offset="1" stop-color="#06B6D4"/>
-                </linearGradient>
-                <radialGradient id="glow" cx="50%" cy="46%" r="55%">
-                  <stop offset="0" stop-color="#3B82F6" stop-opacity=".26"/>
-                  <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
-                </radialGradient>
-              </defs>
-              <circle class="bolt__aura" cx="235" cy="240" r="200" fill="url(#glow)"/>
-              <g transform="translate(230,240) scale(1.35) translate(-176,-256)">
-                <g class="bolt__group">
-                  <g transform="rotate(-14 228 256)">
-                    <path class="bolt__echo" d="M156,152 L156,344 L204,296 L240,360 L276,344 L240,284 L300,284 Z"/>
-                    <line class="trail trail--1" x1="75" y1="207" x2="117" y2="207" pathLength="1" stroke="url(#markFill)" stroke-width="22" opacity=".3"/>
-                    <line class="trail trail--2" x1="63" y1="261" x2="135" y2="261" pathLength="1" stroke="url(#markFill)" stroke-width="22" opacity=".55"/>
-                    <line class="trail trail--3" x1="81" y1="315" x2="131" y2="315" pathLength="1" stroke="url(#markFill)" stroke-width="22" opacity=".78"/>
-                    <path class="flow" pathLength="1" d="M156,152 L156,344 L204,296 L240,360 L276,344 L240,284 L300,284 Z"/>
-                    <path class="bolt__fill" fill="url(#markFill)" d="M156,152 L156,344 L204,296 L240,360 L276,344 L240,284 L300,284 Z"/>
-                    <g class="spark"><circle cx="34" cy="207" r="5" fill="#60A5FA"/></g>
-                    <g class="spark spark--2"><circle cx="26" cy="261" r="6" fill="#22D3EE"/></g>
-                    <g class="spark spark--3"><circle cx="44" cy="315" r="4.5" fill="#60A5FA"/></g>
-                    <circle class="node" cx="156" cy="152" r="8.5" fill="#3B82F6"/>
-                    <circle class="node node--2" cx="300" cy="284" r="6" fill="#06B6D4"/>
-                    <circle class="node node--3" cx="240" cy="360" r="7" fill="#3B82F6"/>
-                  </g>
-                </g>
-              </g>
+          <div class="devices">
+            <div class="devices__aura" aria-hidden="true"></div>
+            <div class="laptop">
+              <div class="laptop__screen"><img src="assets/work/hero-hakiki.webp" width="1200" height="750" alt="De website van Hakiki Döner, gemaakt door FlitzWeb" fetchpriority="high" /></div>
+              <div class="laptop__base" aria-hidden="true"></div>
+            </div>
+            <div class="phone">
+              <img src="assets/work/hero-rijschool-phone.webp" width="520" height="1125" alt="De website van Rijschool Veilig op een telefoon, gemaakt door FlitzWeb" />
+            </div>
+            <svg class="devices__mark" viewBox="140 136 176 240" aria-hidden="true">
+              <defs><linearGradient id="markFill" x1="156" y1="152" x2="300" y2="360" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+              <path fill="url(#markFill)" stroke="#fff" stroke-width="10" stroke-linejoin="round" d="M156,152 L156,344 L204,296 L240,360 L276,344 L240,284 L300,284 Z"/>
             </svg>
           </div>
         </div>
