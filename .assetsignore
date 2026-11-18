@@ -1,0 +1,17 @@
+# Not part of the website: never publish these.
+.git
+.gitignore
+.assetsignore
+.claude
+.wrangler
+.vercel
+.env*
+.DS_Store
+node_modules
+api
+cloudflare
+package.json
+package-lock.json
+wrangler.jsonc
+*.md
+*.log
