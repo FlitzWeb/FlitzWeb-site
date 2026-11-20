@@ -154,7 +154,14 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
   .nav__links { display: none; }
   .burger { display: inline-flex; }
 }
-@media (min-width: 861px) { .menu { display: none !important; } }
+@media (min-width: 861px) {
+  .menu { display: none !important; }
+  /* Equal side columns, so the links sit on the page's centre line even though
+     the logo and the button have different widths. */
+  .nav__row { display: grid; grid-template-columns: 1fr auto 1fr; }
+  .nav__row > .logo { justify-self: start; }
+  .nav__end { justify-self: end; }
+}
 
 /* ---------- Glow horizon ---------- */
 .horizon {
