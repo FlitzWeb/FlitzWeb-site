@@ -137,6 +137,19 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
 .nav__links a:hover { color: var(--ink); }
 .nav__end { display: flex; align-items: center; gap: 10px; }
 .nav__cta { padding: 10px 18px; font-size: 0.875rem; white-space: nowrap; }
+.lang {
+  display: inline-flex; padding: 3px; border-radius: 999px;
+  border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03);
+}
+.lang button {
+  padding: 6px 10px; border: 0; border-radius: 999px; background: none;
+  font-size: 0.8125rem; font-weight: 600; line-height: 1; color: var(--ink-dim);
+  transition: color 0.2s, background-color 0.2s;
+}
+.lang button:hover { color: var(--ink); }
+.lang button[aria-pressed="true"] { color: var(--ink); background: rgba(255, 255, 255, 0.12); }
+.lang--menu { margin-top: 20px; }
+.lang--menu button { padding: 12px 18px; font-size: 0.9375rem; }
 .burger {
   display: none; width: 44px; height: 44px; border-radius: 999px;
   border: 1px solid var(--line-strong); background: rgba(255, 255, 255, 0.04);
@@ -152,6 +165,7 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
 .menu .btn { display: flex; margin-top: 20px; border-bottom: 0; font-size: 1rem; }
 @media (max-width: 860px) {
   .nav__links { display: none; }
+  .lang--nav { display: none; }
   .burger { display: inline-flex; }
 }
 @media (min-width: 861px) {
@@ -224,6 +238,8 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
   max-width: 13ch;
 }
 .hero h1 .w { display: inline-block; }
+/* The English headline is longer: give it room to stay on two lines on desktop. */
+html[lang="en"] .hero h1 { max-width: 18ch; }
 .hero__sub {
   margin-top: 24px; max-width: 46ch;
   font-size: clamp(1rem, 1.4vw, 1.1875rem); line-height: 1.55; color: var(--ink-dim);

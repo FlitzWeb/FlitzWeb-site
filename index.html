@@ -92,21 +92,25 @@
   <!-- FlitzWeb wordmark (reversed), from the logo kit. Never retype it; replace from the kit files. -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="fw-logo" viewBox="20 30 802 180"><path fill="currentColor" d="M44.56 186V109.58H28.52V86H44.56V76.52Q44.56 60.23 53.04 51.03Q61.52 41.82 78.98 41.82Q85.43 41.82 92.42 43.99Q99.41 46.15 104.62 49.14L93.56 70.29Q90.88 68.59 88.41 67.88Q85.95 67.18 83.9 67.18Q78.96 67.18 76.64 70.57Q74.32 73.97 74.32 81.84V86H97.52V109.58H74.32V186Z M112.36 186V46H142.12V186Z M162.45 186V86H192.21V186ZM177.38 72.14Q170.63 72.14 165.56 67.07Q160.5 62.01 160.5 55.26Q160.5 48.3 165.56 43.34Q170.63 38.38 177.38 38.38Q184.33 38.38 189.3 43.34Q194.26 48.3 194.26 55.26Q194.26 62.01 189.3 67.07Q184.33 72.14 177.38 72.14Z M255.18 188.4Q237.82 188.4 229.14 179.99Q220.45 171.58 220.45 155.96V111.06H204.72V86H220.45V54.8H250.21V86H273.72V111.06H250.21V148.71Q250.21 154.93 252.59 157.88Q254.97 160.82 259.91 160.82Q261.72 160.82 264.09 159.9Q266.47 158.98 268.65 157.46L278.98 179.4Q274.17 183.2 267.76 185.8Q261.34 188.4 255.18 188.4Z M457.76 186 423.76 86H454.11L473.13 146.25L492.36 86H521.67L540.4 144.96L559.82 86H590.17L556.02 186H526.8L506.94 121.95L487.03 186Z M647.41 188.4Q632.12 188.4 620.3 181.74Q608.48 175.07 601.77 163.27Q595.06 151.47 595.06 136Q595.06 120.53 601.86 108.73Q608.67 96.93 620.61 90.26Q632.56 83.6 648.11 83.6Q662.08 83.6 673.39 90.43Q684.7 97.26 691.4 110.66Q698.1 124.07 698.1 143.7H626.02Q627.02 152.79 633.53 158.13Q640.05 163.47 648.88 163.47Q656.52 163.47 661.61 160.11Q666.71 156.75 668.95 151.5L695.35 160.91Q691.36 170.01 684.24 176.18Q677.12 182.35 667.74 185.38Q658.37 188.4 647.41 188.4ZM627 123.26H666.7Q665.96 117.27 662.84 113.68Q659.72 110.09 655.54 108.47Q651.36 106.84 647.24 106.84Q643.25 106.84 638.87 108.4Q634.5 109.96 631.18 113.55Q627.87 117.14 627 123.26Z M768.26 188.4Q758.49 188.4 751.12 184.38Q743.74 180.36 738.83 172.83L737.79 186H709.52V46H739.28V98.43Q744.19 91.2 751.41 87.4Q758.64 83.6 768.26 83.6Q782.2 83.6 792.33 89.93Q802.45 96.26 807.96 107.99Q813.46 119.71 813.46 136.01Q813.46 152.09 807.96 163.91Q802.45 175.74 792.33 182.07Q782.2 188.4 768.26 188.4ZM760.53 161.02Q766.91 161.02 771.81 157.8Q776.72 154.57 779.62 148.94Q782.52 143.3 782.52 135.99Q782.52 128.68 779.75 123.07Q776.98 117.45 772.05 114.29Q767.13 111.12 760.73 111.12Q754.49 111.12 749.61 114.3Q744.74 117.47 742.01 123.09Q739.28 128.72 739.28 136.02Q739.28 143.32 742 148.98Q744.72 154.64 749.51 157.83Q754.31 161.02 760.53 161.02Z"/><path fill="var(--bolt)" d="M300.4 78 L304.44 71 L411.76 71 L357.2 165.5 L406.56 194 L402.52 201 L295.2 201 L349.76 106.5 Z"/></symbol></svg>
 
-  <a class="skip" href="#main">Naar inhoud</a>
+  <a class="skip" href="#main" data-en="Skip to content">Naar inhoud</a>
 
   <header class="nav" data-nav>
     <div class="wrap nav__row">
-      <a class="logo" href="#top" aria-label="FlitzWeb, naar boven">
+      <a class="logo" href="#top" aria-label="FlitzWeb, naar boven" data-en-aria="FlitzWeb, back to top">
         <svg viewBox="0 0 802 180" aria-hidden="true"><use href="#fw-logo" /></svg>
       </a>
-      <nav class="nav__links" aria-label="Hoofdmenu">
-        <a href="#werk">Werk</a>
-        <a href="#diensten">Wat je krijgt</a>
-        <a href="#aanpak">Aanpak</a>
-        <a href="#prijzen">Prijzen</a>
+      <nav class="nav__links" aria-label="Hoofdmenu" data-en-aria="Main menu">
+        <a href="#werk" data-en="Work">Werk</a>
+        <a href="#diensten" data-en="What you get">Wat je krijgt</a>
+        <a href="#aanpak" data-en="Process">Aanpak</a>
+        <a href="#prijzen" data-en="Pricing">Prijzen</a>
       </nav>
       <div class="nav__end">
-        <a class="btn btn--ghost nav__cta" href="#contact">Plan een gesprek</a>
+        <div class="lang lang--nav" role="group" aria-label="Taal / Language">
+          <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--ghost nav__cta" href="#contact" data-en="Book a call">Plan een gesprek</a>
         <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu" data-burger>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
         </button>
@@ -114,11 +118,15 @@
     </div>
   </header>
   <div class="menu" id="menu" data-menu hidden>
-    <a href="#werk">Werk</a>
-    <a href="#diensten">Wat je krijgt</a>
-    <a href="#aanpak">Aanpak</a>
-    <a href="#prijzen">Prijzen</a>
-    <a class="btn btn--light btn--block" href="#contact">Plan een gratis kennismaking</a>
+    <a href="#werk" data-en="Work">Werk</a>
+    <a href="#diensten" data-en="What you get">Wat je krijgt</a>
+    <a href="#aanpak" data-en="Process">Aanpak</a>
+    <a href="#prijzen" data-en="Pricing">Prijzen</a>
+    <div class="lang lang--menu" role="group" aria-label="Taal / Language">
+      <button type="button" data-lang="nl" aria-pressed="true">NL</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn--light btn--block" href="#contact" data-en="Book a free intro call">Plan een gratis kennismaking</a>
   </div>
 
   <main id="main">
@@ -132,8 +140,8 @@
       </div>
 
       <div class="hero__inner">
-        <p class="pill">Webstudio uit Eindhoven</p>
-        <h1>
+        <p class="pill" data-en="Web studio from Eindhoven">Webstudio uit Eindhoven</p>
+        <h1 data-en="<span class='w' style='--i:0'>A</span> <span class='w' style='--i:1'>website</span> <span class='w' style='--i:2'>that</span> <span class='w' style='--i:3'>grows</span> <span class='w' style='--i:4'>your</span> <span class='w' style='--i:5'>business.</span>">
           <span class="w" style="--i:0">Een</span>
           <span class="w" style="--i:1">website</span>
           <span class="w" style="--i:2">waar</span>
@@ -142,16 +150,16 @@
           <span class="w" style="--i:5">van</span>
           <span class="w" style="--i:6">groeit.</span>
         </h1>
-        <p class="hero__sub">FlitzWeb ontwerpt en bouwt snelle, scherpe websites voor lokale ondernemers. Vaste prijs vooraf, live in weken en goed vindbaar in Google.</p>
+        <p class="hero__sub" data-en="FlitzWeb designs and builds fast, sharp websites for local businesses. Fixed price upfront, live in weeks and easy to find on Google.">FlitzWeb ontwerpt en bouwt snelle, scherpe websites voor lokale ondernemers. Vaste prijs vooraf, live in weken en goed vindbaar in Google.</p>
         <div class="hero__actions">
-          <a class="btn btn--light" href="#contact">Plan een gratis kennismaking</a>
-          <a class="btn btn--ghost" href="#werk">Bekijk het werk</a>
+          <a class="btn btn--light" href="#contact" data-en="Book a free intro call">Plan een gratis kennismaking</a>
+          <a class="btn btn--ghost" href="#werk" data-en="See the work">Bekijk het werk</a>
         </div>
       </div>
 
       <div class="hero__foot">
         <a href="#werk">
-          Recent werk
+          <span data-en="Recent work">Recent werk</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v13M6 12l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </a>
       </div>
@@ -161,37 +169,37 @@
     <section class="section" id="werk">
       <div class="wrap">
         <div class="head">
-          <h2>Echt werk, live en snel.</h2>
-          <p class="lede">Twee sites die nu online staan. Klik door en bekijk ze zelf, op je telefoon of op je laptop.</p>
+          <h2 data-en="Real work, live and fast.">Echt werk, live en snel.</h2>
+          <p class="lede" data-en="Two sites that are online right now. Click through and see for yourself, on your phone or your laptop.">Twee sites die nu online staan. Klik door en bekijk ze zelf, op je telefoon of op je laptop.</p>
         </div>
 
         <article class="case">
           <div class="case__shot">
             <div class="case__bar">rijschoolveilig.com</div>
-            <img src="assets/work/rijschool-veilig.jpg" width="1600" height="1000" alt="Homepage van Rijschool Veilig: donkere site met de kop 'Rijles in Eindhoven' en een knop om een gratis proefles te plannen" />
+            <img src="assets/work/rijschool-veilig.jpg" width="1600" height="1000" alt="Homepage van Rijschool Veilig: donkere site met de kop 'Rijles in Eindhoven' en een knop om een gratis proefles te plannen" data-en-alt="Rijschool Veilig homepage: a dark site with the heading 'Rijles in Eindhoven' and a button to book a free trial lesson" />
           </div>
           <div class="case__body">
             <h3>Rijschool Veilig</h3>
-            <p>Een nieuwe rijschool in Eindhoven, met een site die meteen opvalt. Alles leidt naar één stap: je gratis proefles plannen via WhatsApp. Elke klik op WhatsApp meten we, zonder cookies.</p>
+            <p data-en="A new driving school in Eindhoven, with a site that stands out at first glance. Everything leads to one step: booking your free trial lesson via WhatsApp. We measure every WhatsApp click, without cookies.">Een nieuwe rijschool in Eindhoven, met een site die meteen opvalt. Alles leidt naar één stap: je gratis proefles plannen via WhatsApp. Elke klik op WhatsApp meten we, zonder cookies.</p>
             <ul class="tags">
-              <li>Website</li>
-              <li>Plannen via WhatsApp</li>
-              <li>Domein en hosting</li>
-              <li>Vindbaar in Google</li>
+              <li data-en="Website">Website</li>
+              <li data-en="Booking via WhatsApp">Plannen via WhatsApp</li>
+              <li data-en="Domain and hosting">Domein en hosting</li>
+              <li data-en="Found on Google">Vindbaar in Google</li>
             </ul>
             <figure class="quote">
-              <div class="stars" role="img" aria-label="5 van 5 sterren">
+              <div class="stars" role="img" aria-label="5 van 5 sterren" data-en-aria="5 out of 5 stars">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.5 2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.6-.8z" /></svg>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.5 2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.6-.8z" /></svg>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.5 2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.6-.8z" /></svg>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.5 2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.6-.8z" /></svg>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.5 2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17.4l-5.9 3.3 1.3-6.6L2.5 9.5l6.6-.8z" /></svg>
               </div>
-              <blockquote>“Super tevreden over de samenwerking met FlitzWeb! Ze hebben een mooie, professionele website voor mijn rijschool gemaakt. Goede communicatie en denkt goed met je mee. Zeker een aanrader!”</blockquote>
-              <figcaption>Hasan Guntekin · Rijschool Veilig, Google-review</figcaption>
+              <blockquote data-en="“Very happy with the collaboration with FlitzWeb! They made a beautiful, professional website for my driving school. Good communication and they really think along with you. Definitely recommended!”">“Super tevreden over de samenwerking met FlitzWeb! Ze hebben een mooie, professionele website voor mijn rijschool gemaakt. Goede communicatie en denkt goed met je mee. Zeker een aanrader!”</blockquote>
+              <figcaption data-en="Hasan Guntekin · Rijschool Veilig, Google review (translated from Dutch)">Hasan Guntekin · Rijschool Veilig, Google-review</figcaption>
             </figure>
             <a class="arrow-link" href="https://rijschoolveilig.com" target="_blank" rel="noopener">
-              Bekijk de live site
+              <span data-en="View the live site">Bekijk de live site</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
           </div>
@@ -200,19 +208,19 @@
         <article class="case case--flip">
           <div class="case__shot">
             <div class="case__bar">hakiki.nl</div>
-            <img src="assets/work/hakiki-doner.jpg" width="1600" height="1000" loading="lazy" alt="Homepage van Hakiki Döner: lichte site met de kop 'De echte döner van Woensel' en een rode belknop" />
+            <img src="assets/work/hakiki-doner.jpg" width="1600" height="1000" loading="lazy" alt="Homepage van Hakiki Döner: lichte site met de kop 'De echte döner van Woensel' en een rode belknop" data-en-alt="Hakiki Döner homepage: a light site with the heading 'De echte döner van Woensel' and a red call button" />
           </div>
           <div class="case__body">
             <h3>Hakiki Döner</h3>
-            <p>Een snelle site voor ‘de echte döner van Woensel’. Eén grote knop laat klanten rechtstreeks bellen en afhalen, zonder platformcommissie. Elke klik op bellen en route meten we, zonder cookies.</p>
+            <p data-en="A fast site for ‘the real döner of Woensel’. One big button lets customers call and pick up directly, with no platform commission. We measure every call and route click, without cookies.">Een snelle site voor ‘de echte döner van Woensel’. Eén grote knop laat klanten rechtstreeks bellen en afhalen, zonder platformcommissie. Elke klik op bellen en route meten we, zonder cookies.</p>
             <ul class="tags">
-              <li>Website</li>
-              <li>Direct bestellen</li>
-              <li>Menu online</li>
-              <li>Vindbaar in Google</li>
+              <li data-en="Website">Website</li>
+              <li data-en="Direct orders">Direct bestellen</li>
+              <li data-en="Menu online">Menu online</li>
+              <li data-en="Found on Google">Vindbaar in Google</li>
             </ul>
             <a class="arrow-link" href="https://hakiki.nl" target="_blank" rel="noopener">
-              Bekijk de live site
+              <span data-en="View the live site">Bekijk de live site</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
           </div>
@@ -224,36 +232,36 @@
     <section class="section" id="diensten">
       <div class="wrap">
         <div class="head">
-          <h2>Wat we voor je regelen.</h2>
-          <p class="lede">Geen ingewikkelde woorden. Gewoon wat je krijgt, en wat het voor je zaak doet.</p>
+          <h2 data-en="What we sort out for you.">Wat we voor je regelen.</h2>
+          <p class="lede" data-en="No complicated words. Just what you get, and what it does for your business.">Geen ingewikkelde woorden. Gewoon wat je krijgt, en wat het voor je zaak doet.</p>
         </div>
         <ul class="svc">
           <li>
-            <h3>Een website waar klanten alles vinden</h3>
+            <h3 data-en="A website where customers find everything">Een website waar klanten alles vinden</h3>
             <div>
-              <p>Je openingstijden, adres, je menu of diensten en een knop om je te bellen. Alles staat er duidelijk op en leest fijn op een telefoon, want daar kijken je klanten op.</p>
-              <p class="gets"><span>Openingstijden</span><span>Menu of diensten</span><span>Foto's van je zaak</span><span>Logo en kleuren</span></p>
+              <p data-en="Your opening hours, address, your menu or services and a button to call you. All of it clear and easy to read on a phone, because that's what your customers use.">Je openingstijden, adres, je menu of diensten en een knop om je te bellen. Alles staat er duidelijk op en leest fijn op een telefoon, want daar kijken je klanten op.</p>
+              <p class="gets"><span data-en="Opening hours">Openingstijden</span><span data-en="Menu or services">Menu of diensten</span><span data-en="Photos of your place">Foto's van je zaak</span><span data-en="Logo and colours">Logo en kleuren</span></p>
             </div>
           </li>
           <li>
-            <h3>Goed te vinden in Google</h3>
+            <h3 data-en="Easy to find on Google">Goed te vinden in Google</h3>
             <div>
-              <p>Zoekt iemand in de buurt naar wat jij verkoopt? Dan wil je dat ze bij jou uitkomen en niet bij de concurrent. Wij zorgen dat Google je zaak snapt en dat je op de kaart staat.</p>
-              <p class="gets"><span>Google Maps</span><span>Gevonden in je buurt</span><span>Snel geladen</span><span>Reviews</span></p>
+              <p data-en="Someone nearby searching for what you sell should end up at your place, not the competition's. We make sure Google understands your business and that you show up on the map.">Zoekt iemand in de buurt naar wat jij verkoopt? Dan wil je dat ze bij jou uitkomen en niet bij de concurrent. Wij zorgen dat Google je zaak snapt en dat je op de kaart staat.</p>
+              <p class="gets"><span data-en="Google Maps">Google Maps</span><span data-en="Found in your area">Gevonden in je buurt</span><span data-en="Loads fast">Snel geladen</span><span data-en="Reviews">Reviews</span></p>
             </div>
           </li>
           <li>
-            <h3>Meer klanten die bellen of bestellen</h3>
+            <h3 data-en="More customers who call or order">Meer klanten die bellen of bestellen</h3>
             <div>
-              <p>Een mooie website alleen is niet genoeg. Je bellen, je zaak vinden of iets bestellen moet zó simpel zijn dat niemand halverwege afhaakt.</p>
-              <p class="gets"><span>Bellen met één tik</span><span>Online bestellen</span><span>Reserveren</span><span>WhatsApp</span></p>
+              <p data-en="A good-looking website isn't enough. Calling you, finding your door or placing an order has to be so simple that nobody gives up halfway.">Een mooie website alleen is niet genoeg. Je bellen, je zaak vinden of iets bestellen moet zó simpel zijn dat niemand halverwege afhaakt.</p>
+              <p class="gets"><span data-en="Call with one tap">Bellen met één tik</span><span data-en="Order online">Online bestellen</span><span data-en="Reservations">Reserveren</span><span data-en="WhatsApp">WhatsApp</span></p>
             </div>
           </li>
           <li>
-            <h3>Wij houden het bij</h3>
+            <h3 data-en="We keep it up to date">Wij houden het bij</h3>
             <div>
-              <p>Andere prijzen, gewijzigde openingstijden of even op vakantie? Je stuurt ons een bericht en wij zetten het online. Je hoeft zelf nooit iets technisch te doen.</p>
-              <p class="gets"><span>Aanpassingen</span><span>Hosting</span><span>Beveiliging</span><span>Vragen? Bel ons</span></p>
+              <p data-en="New prices, different opening hours or off on holiday? Send us a message and we'll put it online. You never have to touch anything technical yourself.">Andere prijzen, gewijzigde openingstijden of even op vakantie? Je stuurt ons een bericht en wij zetten het online. Je hoeft zelf nooit iets technisch te doen.</p>
+              <p class="gets"><span data-en="Changes">Aanpassingen</span><span data-en="Hosting">Hosting</span><span data-en="Security">Beveiliging</span><span data-en="Questions? Call us">Vragen? Bel ons</span></p>
             </div>
           </li>
         </ul>
@@ -264,25 +272,25 @@
     <section class="section" id="aanpak">
       <div class="wrap">
         <div class="head">
-          <h2>Van eerste gesprek tot live.</h2>
-          <p class="lede">Vier stappen, in weken en niet in maanden. Je weet steeds wat de volgende stap is.</p>
+          <h2 data-en="From first call to live.">Van eerste gesprek tot live.</h2>
+          <p class="lede" data-en="Four steps, in weeks rather than months. You always know what comes next.">Vier stappen, in weken en niet in maanden. Je weet steeds wat de volgende stap is.</p>
         </div>
         <ol class="steps">
           <li>
-            <h3>Kennismaking</h3>
-            <p>Een gratis gesprek van 30 minuten. Jij vertelt over je zaak, wij vertellen wat we zouden bouwen en wat het kost.</p>
+            <h3 data-en="Intro call">Kennismaking</h3>
+            <p data-en="A free 30-minute call. You tell us about your business, we tell you what we would build and what it costs.">Een gratis gesprek van 30 minuten. Jij vertelt over je zaak, wij vertellen wat we zouden bouwen en wat het kost.</p>
           </li>
           <li>
-            <h3>Ontwerp</h3>
-            <p>Je krijgt een eerste versie op een eigen link, die je op je telefoon kunt bekijken.</p>
+            <h3 data-en="Design">Ontwerp</h3>
+            <p data-en="You get a first version on its own link, which you can view on your phone.">Je krijgt een eerste versie op een eigen link, die je op je telefoon kunt bekijken.</p>
           </li>
           <li>
-            <h3>Live</h3>
-            <p>Wij regelen het domein, de hosting en Google. Jij hoeft niets technisch te doen.</p>
+            <h3 data-en="Live">Live</h3>
+            <p data-en="We take care of the domain, the hosting and Google. You don't have to do anything technical.">Wij regelen het domein, de hosting en Google. Jij hoeft niets technisch te doen.</p>
           </li>
           <li>
-            <h3>Bijhouden</h3>
-            <p>Nieuwe prijzen of andere openingstijden? Stuur een bericht en het staat online.</p>
+            <h3 data-en="Upkeep">Bijhouden</h3>
+            <p data-en="New prices or different opening hours? Send a message and it's online.">Nieuwe prijzen of andere openingstijden? Stuur een bericht en het staat online.</p>
           </li>
         </ol>
       </div>
@@ -293,29 +301,29 @@
       <div class="wrap">
         <div class="price">
           <div class="price__intro">
-            <h2>Eén prijs, vooraf duidelijk.</h2>
-            <p>Je weet wat het kost voordat we beginnen. Geen uurtje-factuurtje en geen verrassingen achteraf.</p>
-            <a class="btn btn--light" href="#contact">Plan een gratis kennismaking</a>
+            <h2 data-en="One price, clear upfront.">Eén prijs, vooraf duidelijk.</h2>
+            <p data-en="You know what it costs before we start. No hourly billing and no surprises afterwards.">Je weet wat het kost voordat we beginnen. Geen uurtje-factuurtje en geen verrassingen achteraf.</p>
+            <a class="btn btn--light" href="#contact" data-en="Book a free intro call">Plan een gratis kennismaking</a>
           </div>
           <div class="price__rows">
             <div>
-              <p class="price__amount"><strong>€500</strong><span>eenmalig</span></p>
-              <h3>Je complete website</h3>
+              <p class="price__amount"><strong>€500</strong><span data-en="one-time">eenmalig</span></p>
+              <h3 data-en="Your complete website">Je complete website</h3>
               <ul class="checks">
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>Ontwerp op maat, in jouw kleuren en stijl</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>Werkt goed op telefoon, tablet en laptop</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>Vindbaar in Google</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg><span data-en="Custom design, in your colours and style">Ontwerp op maat, in jouw kleuren en stijl</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg><span data-en="Works well on phone, tablet and laptop">Werkt goed op telefoon, tablet en laptop</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg><span data-en="Found on Google">Vindbaar in Google</span></li>
               </ul>
             </div>
             <div>
-              <p class="price__amount"><strong>€30</strong><span>per maand</span></p>
-              <h3>Onderhoud</h3>
+              <p class="price__amount"><strong>€30</strong><span data-en="per month">per maand</span></p>
+              <h3 data-en="Maintenance">Onderhoud</h3>
               <ul class="checks">
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>Hosting en beveiliging</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>Aanpassingen als er iets verandert</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>Vragen? Je kunt ons gewoon bellen</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg><span data-en="Hosting and security">Hosting en beveiliging</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg><span data-en="Changes whenever something changes">Aanpassingen als er iets verandert</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg><span data-en="Questions? Just give us a call">Vragen? Je kunt ons gewoon bellen</span></li>
               </ul>
-              <p class="price__note">Iets groters nodig, zoals een webshop? Dan krijg je vooraf een vaste offerte.</p>
+              <p class="price__note" data-en="Need something bigger, like a webshop? Then you get a fixed quote upfront.">Iets groters nodig, zoals een webshop? Dan krijg je vooraf een vaste offerte.</p>
             </div>
           </div>
         </div>
@@ -326,12 +334,12 @@
     <section class="section" id="contact">
       <div class="wrap contact">
         <div class="contact__intro">
-          <h2>Laten we kennismaken.</h2>
-          <p class="lede">Plan een gratis gesprek van 30 minuten. We bespreken je zaak, de planning en wat het kost. Daarna beslis jij.</p>
+          <h2 data-en="Let's meet.">Laten we kennismaken.</h2>
+          <p class="lede" data-en="Book a free 30-minute call. We'll discuss your business, the timeline and what it costs. After that, you decide.">Plan een gratis gesprek van 30 minuten. We bespreken je zaak, de planning en wat het kost. Daarna beslis jij.</p>
           <ul class="facts">
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" /><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
-              30 minuten, gratis en vrijblijvend
+              <span data-en="30 minutes, free and no strings attached">30 minuten, gratis en vrijblijvend</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2" /><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
@@ -339,7 +347,7 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.800 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2" /></svg>
-              Eindhoven, en online door heel Nederland
+              <span data-en="Eindhoven, and online across the Netherlands">Eindhoven, en online door heel Nederland</span>
             </li>
           </ul>
         </div>
@@ -352,49 +360,49 @@
           <input type="hidden" name="type" value="Nieuwe website" />
 
           <div class="field">
-            <label for="bf-name">Naam</label>
-            <input id="bf-name" name="name" type="text" autocomplete="name" required placeholder="Jan Jansen" />
+            <label for="bf-name" data-en="Name">Naam</label>
+            <input id="bf-name" name="name" type="text" autocomplete="name" required placeholder="Jan Jansen" data-en-ph="Jane Doe" />
             <span class="field__err" data-err></span>
           </div>
           <div class="field">
-            <label for="bf-email">E-mail</label>
-            <input id="bf-email" name="email" type="email" autocomplete="email" required placeholder="jan@bedrijf.nl" />
+            <label for="bf-email" data-en="Email">E-mail</label>
+            <input id="bf-email" name="email" type="email" autocomplete="email" required placeholder="jan@bedrijf.nl" data-en-ph="jane@company.com" />
             <span class="field__err" data-err></span>
           </div>
           <div class="field field--full">
-            <label for="bf-company">Bedrijf <span class="opt">(optioneel)</span></label>
-            <input id="bf-company" name="company" type="text" autocomplete="organization" placeholder="Naam van je zaak" />
+            <label for="bf-company"><span data-en="Company">Bedrijf</span> <span class="opt" data-en="(optional)">(optioneel)</span></label>
+            <input id="bf-company" name="company" type="text" autocomplete="organization" placeholder="Naam van je zaak" data-en-ph="Name of your business" />
           </div>
 
           <fieldset class="field field--full">
-            <legend>Kies een dag</legend>
-            <div class="daypick" data-daypick role="group" aria-label="Kies een dag"></div>
+            <legend data-en="Pick a day">Kies een dag</legend>
+            <div class="daypick" data-daypick role="group" aria-label="Kies een dag" data-en-aria="Pick a day"></div>
           </fieldset>
           <fieldset class="field field--full">
-            <legend>Kies een tijd <span class="tz" data-tz></span></legend>
-            <div class="slots" data-slots role="group" aria-label="Kies een tijd"></div>
+            <legend><span data-en="Pick a time">Kies een tijd</span> <span class="tz" data-tz></span></legend>
+            <div class="slots" data-slots role="group" aria-label="Kies een tijd" data-en-aria="Pick a time"></div>
           </fieldset>
 
           <div class="field field--full">
-            <label for="bf-msg">Nog iets wat we moeten weten? <span class="opt">(optioneel)</span></label>
-            <textarea id="bf-msg" name="message" rows="3" placeholder="Een zin of twee over je zaak en wat je zoekt."></textarea>
+            <label for="bf-msg"><span data-en="Anything we should know?">Nog iets wat we moeten weten?</span> <span class="opt" data-en="(optional)">(optioneel)</span></label>
+            <textarea id="bf-msg" name="message" rows="3" placeholder="Een zin of twee over je zaak en wat je zoekt." data-en-ph="A sentence or two about your business and what you're looking for."></textarea>
           </div>
 
           <p class="form__error" data-error hidden></p>
 
           <button class="btn btn--blue btn--block" type="submit">
-            Plan mijn gesprek
+            <span data-en="Book my call">Plan mijn gesprek</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
           </button>
-          <p class="form__fine">We reageren binnen één werkdag. Nooit spam.</p>
+          <p class="form__fine" data-en="We reply within one business day. Never spam.">We reageren binnen één werkdag. Nooit spam.</p>
 
           <div class="form__success" data-success hidden>
             <span class="tick" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M5 12.5 10 17l9-11" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </span>
-            <h3>Je staat in de agenda</h3>
+            <h3 data-en="You're on the calendar">Je staat in de agenda</h3>
             <p data-success-msg></p>
-            <button type="button" class="btn btn--ghost" data-reset>Kies een ander moment</button>
+            <button type="button" class="btn btn--ghost" data-reset data-en="Pick another time">Kies een ander moment</button>
           </div>
         </form>
       </div>
@@ -410,17 +418,17 @@
       <div class="arc arc--core"></div>
     </div>
     <div class="signoff__inner">
-      <a class="logo" href="#top" aria-label="FlitzWeb, naar boven">
+      <a class="logo" href="#top" aria-label="FlitzWeb, naar boven" data-en-aria="FlitzWeb, back to top">
         <svg viewBox="0 0 802 180" aria-hidden="true"><use href="#fw-logo" /></svg>
       </a>
-      <p>Websites met de snelheid van een flits.</p>
+      <p data-en="Websites at the speed of a flash.">Websites met de snelheid van een flits.</p>
     </div>
     <div class="foot">
       <p>© <span data-year>2026</span> FlitzWeb · Eindhoven</p>
       <ul>
         <li><a href="mailto:info@flitzweb.nl">info@flitzweb.nl</a></li>
         <li><a href="https://instagram.com/flitzweb" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="#top">Naar boven</a></li>
+        <li><a href="#top" data-en="Back to top">Naar boven</a></li>
       </ul>
     </div>
   </footer>
