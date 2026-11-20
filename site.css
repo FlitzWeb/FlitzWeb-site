@@ -232,8 +232,8 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
 .hero__foot a:hover { color: var(--ink); }
 .hero__foot svg { width: 16px; height: 16px; }
 
-/* Small phones: keep the stacked buttons clear of the horizon */
-@media (max-width: 560px) { .hero { min-height: max(100svh, 760px); } }
+/* Phones: the buttons stack, so the horizon sits lower to keep clear of them */
+@media (max-width: 560px) { .hero { --rim: 0.27; min-height: max(100svh, 760px); } }
 
 @media (prefers-reduced-motion: no-preference) {
   .hero .horizon { animation: horizon-in 2s var(--ease) both; }
