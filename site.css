@@ -238,6 +238,17 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
   border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03);
   margin-bottom: 28px;
 }
+/* The hero pill carries what is current (an offer, something new, news) and links to it. */
+.pill--news {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding-block: 8px; color: var(--ink); text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.pill--news::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-lt); }
+.pill--news svg { flex: none; width: 14px; height: 14px; color: var(--ink-dim); transition: transform 0.2s var(--ease); }
+.pill--news:hover { border-color: var(--line-strong); background: rgba(255, 255, 255, 0.07); }
+.pill--news:hover svg { transform: translateX(2px); }
+.pill--news:focus-visible { border-radius: 999px; }
 .hero h1 {
   font-size: clamp(2.5rem, 6.2vw, 4.75rem);
   font-weight: 700; line-height: 1.02; letter-spacing: -0.035em;
@@ -412,6 +423,19 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
   font-size: clamp(3.25rem, 2rem + 5vw, 5.5rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.04em;
 }
 .price__amount span { font-size: 1.125rem; font-weight: 600; }
+/* Introductory price: the normal price stays visible, struck through, next to the offer. */
+.price__tag {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px;
+  margin-bottom: 18px; font-size: 0.875rem; font-weight: 600;
+}
+.price__tag strong {
+  padding: 6px 13px; border-radius: 999px;
+  background: #fff; color: var(--blue); font-weight: 700;
+}
+.price__amount s {
+  font-size: clamp(1.5rem, 1rem + 2vw, 2.25rem); font-weight: 700; letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.72); text-decoration-thickness: 2px;
+}
 .price__rows h3 { margin-top: 12px; font-size: 1.25rem; }
 .checks { margin-top: 16px; display: grid; gap: 8px; }
 .checks li { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; }
