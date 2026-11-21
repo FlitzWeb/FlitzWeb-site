@@ -21,7 +21,7 @@
   const BUSINESS_TZ = "Europe/Amsterdam";
   const STR = {
     nl: {
-      title: "FlitzWeb — Websites voor lokale ondernemers",
+      title: "Website laten maken in Eindhoven | FlitzWeb",
       desc: "FlitzWeb ontwerpt en bouwt snelle, scherpe websites voor lokale ondernemers. Vaste prijs vooraf, live in weken en goed vindbaar in Google. Stuur ons een bericht via WhatsApp of e-mail.",
       tz: "· Nederlandse tijd",
       required: "Dit veld is verplicht.",
@@ -37,7 +37,7 @@
       submitError: "Er ging iets mis. Probeer het opnieuw of mail ons.",
     },
     en: {
-      title: "FlitzWeb — Websites for local businesses",
+      title: "Websites for local businesses in Eindhoven | FlitzWeb",
       desc: "FlitzWeb designs and builds fast, sharp websites for local businesses. Fixed price upfront, live in weeks and easy to find on Google. Send us a message on WhatsApp or by email.",
       tz: "· Dutch time (Europe/Amsterdam)",
       required: "This field is required.",
