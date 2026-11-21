@@ -353,6 +353,42 @@
     bookings.push(form);
   });
 
+  /* ---------- Film: plays muted while it is in view; nothing downloads before that ---------- */
+  const film = $("[data-film]");
+  if (film) {
+    const video = $("video", film);
+    const playBtn = $("[data-film-play]", film);
+    const soundBtn = $("[data-film-sound]", film);
+    // Visitors who asked their device for less motion press play themselves.
+    let wantsPlay = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let inView = false;
+
+    const show = (btn, state) => $$("[data-when]", btn).forEach((el) => { el.hidden = el.dataset.when !== state; });
+    const sync = () => {
+      show(playBtn, video.paused ? "paused" : "playing");
+      show(soundBtn, video.muted ? "muted" : "unmuted");
+    };
+    const update = () => {
+      if (inView && wantsPlay) video.play().catch(() => { /* autoplay refused: the play button still works */ });
+      else video.pause();
+    };
+
+    playBtn.addEventListener("click", () => { wantsPlay = video.paused; update(); });
+    video.addEventListener("click", () => playBtn.click());
+    soundBtn.addEventListener("click", () => {
+      video.muted = !video.muted;
+      if (!video.muted && video.paused) { wantsPlay = true; update(); }
+    });
+    ["play", "pause", "volumechange"].forEach((type) => video.addEventListener(type, sync));
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => { inView = entries[0].isIntersecting; update(); }, { threshold: 0.4 }).observe(video);
+    } else {
+      inView = true;
+    }
+    sync();
+  }
+
   /* ---------- Footer year ---------- */
   $$("[data-year]").forEach((el) => { el.textContent = String(new Date().getFullYear()); });
 

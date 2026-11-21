@@ -167,6 +167,33 @@
       </div>
     </section>
 
+    <!-- ================= Film ================= -->
+    <section class="section" id="film" data-film>
+      <div class="wrap">
+        <div class="head">
+          <h2 data-en="FlitzWeb in twenty seconds.">FlitzWeb in twintig seconden.</h2>
+          <p class="lede" data-en="What we build, what it costs and how fast you are live.">Wat we maken, wat het kost en hoe snel je live staat.</p>
+        </div>
+
+        <div class="film">
+          <!-- preload="none": nothing is downloaded until the film scrolls into view and plays -->
+          <video class="film__video" width="1920" height="1080" muted loop playsinline preload="none" poster="assets/film/flitzweb-film-poster.webp" aria-label="Film van twintig seconden: het FlitzWeb-logo opent tot een browser met deze site, daarna hakiki.nl op een laptop en een telefoon, de prijs van 500 euro, de vier stappen tot live, en de oproep om een bericht te sturen." data-en-aria="Twenty-second film: the FlitzWeb logo opens into a browser showing this site, then hakiki.nl on a laptop and a phone, the price of 500 euros, the four steps to going live, and the invitation to send a message.">
+            <source src="assets/film/flitzweb-film.mp4" type="video/mp4" />
+          </video>
+          <div class="film__controls">
+            <button class="film__btn" type="button" data-film-play>
+              <span data-when="paused"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z" fill="currentColor" /></svg><span data-en="Play">Speel af</span></span>
+              <span data-when="playing" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" /></svg><span data-en="Pause">Pauze</span></span>
+            </button>
+            <button class="film__btn" type="button" data-film-sound>
+              <span data-when="muted"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3l5-4v13l-5-4H4zM16.5 9.5l5 5M21.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span data-en="Sound on">Geluid aan</span></span>
+              <span data-when="unmuted" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3l5-4v13l-5-4H4zM16 9a4.5 4.5 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span data-en="Sound off">Geluid uit</span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= Werk ================= -->
     <section class="section" id="werk">
       <div class="wrap">

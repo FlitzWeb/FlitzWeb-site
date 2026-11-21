@@ -285,6 +285,33 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
   .hero__foot    { animation: fade 1.2s var(--ease) 1.7s both; }
 }
 
+/* ---------- Film ---------- */
+.film {
+  position: relative; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--line-strong); background: var(--bg);
+  box-shadow: 0 40px 80px -40px rgba(47, 91, 255, 0.35);
+}
+.film__video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; cursor: pointer; }
+.film__controls { position: absolute; right: 12px; bottom: 12px; display: flex; gap: 8px; }
+.film__btn {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px;
+  font-size: 0.875rem; font-weight: 600; color: var(--ink); cursor: pointer;
+  background: rgba(6, 9, 19, 0.72); border: 1px solid var(--line-strong);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  transition: background-color 0.2s var(--ease);
+}
+.film__btn:hover { background: rgba(6, 9, 19, 0.92); }
+.film__btn > span { display: inline-flex; align-items: center; gap: 8px; }
+.film__btn > span[hidden] { display: none; }
+.film__btn svg { width: 16px; height: 16px; flex: none; }
+@media (max-width: 560px) {
+  .film { border-radius: 12px; }
+  .film__controls { right: 8px; bottom: 8px; gap: 6px; }
+  /* On a phone the film is small: icon-only buttons, the labels stay for screen readers. */
+  .film__btn { width: 40px; min-height: 40px; padding: 0; justify-content: center; }
+  .film__btn > span > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
 /* ---------- Werk ---------- */
 .case {
   display: grid; gap: clamp(28px, 5vw, 72px); align-items: center;
