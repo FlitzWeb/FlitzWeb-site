@@ -22,7 +22,7 @@
   const STR = {
     nl: {
       title: "Website laten maken in Eindhoven | FlitzWeb",
-      desc: "FlitzWeb ontwerpt en bouwt snelle, scherpe websites voor lokale ondernemers. Vaste prijs vooraf, live in weken en goed vindbaar in Google. Stuur ons een bericht via WhatsApp of e-mail.",
+      desc: "FlitzWeb ontwerpt en bouwt snelle, scherpe websites voor lokale ondernemers. Vaste prijs vooraf, live in dagen en goed vindbaar in Google. Stuur ons een bericht via WhatsApp of e-mail.",
       tz: "· Nederlandse tijd",
       required: "Dit veld is verplicht.",
       email: "Vul een geldig e-mailadres in.",
@@ -38,7 +38,7 @@
     },
     en: {
       title: "Websites for local businesses in Eindhoven | FlitzWeb",
-      desc: "FlitzWeb designs and builds fast, sharp websites for local businesses. Fixed price upfront, live in weeks and easy to find on Google. Send us a message on WhatsApp or by email.",
+      desc: "FlitzWeb designs and builds fast, sharp websites for local businesses. Fixed price upfront, live in days and easy to find on Google. Send us a message on WhatsApp or by email.",
       tz: "· Dutch time (Europe/Amsterdam)",
       required: "This field is required.",
       email: "Enter a valid email address.",
