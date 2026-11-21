@@ -107,6 +107,11 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
 .btn[disabled] { opacity: 0.55; cursor: not-allowed; }
 .btn svg { width: 18px; height: 18px; flex: none; }
 
+/* Second route next to a WhatsApp button: a plain line with the mail address */
+.cta-alt { font-size: 0.875rem; color: var(--ink-dim); }
+.cta-alt a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px; }
+.cta-alt a:hover { text-decoration-color: currentColor; }
+
 .arrow-link {
   display: inline-flex; align-items: center; gap: 8px;
   font-weight: 600; color: var(--blue-lt);
@@ -163,6 +168,7 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
 }
 .menu a { display: block; padding: 14px 0; font-size: 1.125rem; font-weight: 600; border-bottom: 1px solid var(--line); }
 .menu .btn { display: flex; margin-top: 20px; border-bottom: 0; font-size: 1rem; }
+.menu .btn + .btn { margin-top: 10px; }
 @media (max-width: 860px) {
   .nav__links { display: none; }
   .lang--nav { display: none; }
@@ -246,6 +252,7 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
   text-wrap: pretty;
 }
 .hero__actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.hero__actions .cta-alt { flex-basis: 100%; margin-top: 4px; }
 .hero__foot {
   position: absolute; inset: auto 0 clamp(24px, 5vh, 44px) 0;
   display: flex; justify-content: center; padding-inline: var(--gutter);
@@ -255,10 +262,17 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
 .hero__foot a:hover { color: var(--ink); }
 .hero__foot svg { width: 16px; height: 16px; }
 
-/* Phones: the buttons stack, so the horizon sits lower to keep clear of them */
+/* Phones: the buttons stack with the mail line under them, so the horizon sits
+   lower and the hero is tall enough to keep clear of them */
 @media (max-width: 560px) {
-  .hero { --rim: 0.27; min-height: max(100svh, 760px); }
+  .hero { --rim: 0.27; min-height: max(100svh, 820px); }
   .horizon { --halo-1: 56px; --halo-2: 120px; }
+}
+
+/* Laptop-height screens: the mail line sits on the same row as the buttons,
+   so the stack stays as tall as it was and keeps clear of the horizon */
+@media (min-width: 561px) and (max-height: 880px) {
+  .hero__actions .cta-alt { flex-basis: auto; margin: 0 0 0 6px; align-self: center; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -363,6 +377,8 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
 }
 .price__intro p { margin-top: 20px; max-width: 40ch; font-size: 1.125rem; text-wrap: pretty; }
 .price__intro .btn { margin-top: 32px; }
+.price__intro .cta-alt { margin-top: 14px; font-size: 0.9375rem; color: #fff; }
+.price__intro .cta-alt a { color: #fff; text-decoration-color: rgba(255, 255, 255, 0.6); }
 .price__rows > div + div { margin-top: 36px; padding-top: 36px; border-top: 1px solid rgba(255, 255, 255, 0.35); }
 .price__amount { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; }
 .price__amount strong {
@@ -382,6 +398,10 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
   .contact__intro { position: sticky; top: calc(var(--nav-h) + 32px); }
 }
 .contact__intro .lede { margin-top: 20px; }
+.contact__actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 560px) { .contact__actions .btn { flex: 1 1 100%; padding-block: 16px; font-size: 1rem; } }
+.contact__call > p { margin-top: 8px; color: var(--ink-dim); }
+.contact__call .form { margin-top: 24px; }
 .facts { margin-top: 32px; display: grid; gap: 14px; }
 .facts li { display: flex; gap: 12px; align-items: center; font-weight: 500; }
 .facts svg { width: 20px; height: 20px; flex: none; color: var(--blue-lt); }

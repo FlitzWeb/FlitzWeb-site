@@ -22,7 +22,7 @@
   const STR = {
     nl: {
       title: "FlitzWeb — Websites voor lokale ondernemers",
-      desc: "FlitzWeb ontwerpt en bouwt snelle, scherpe websites voor lokale ondernemers. Vaste prijs vooraf, live in weken en goed vindbaar in Google. Plan een gratis kennismaking.",
+      desc: "FlitzWeb ontwerpt en bouwt snelle, scherpe websites voor lokale ondernemers. Vaste prijs vooraf, live in weken en goed vindbaar in Google. Stuur ons een bericht via WhatsApp of e-mail.",
       tz: "· Nederlandse tijd",
       required: "Dit veld is verplicht.",
       email: "Vul een geldig e-mailadres in.",
@@ -38,7 +38,7 @@
     },
     en: {
       title: "FlitzWeb — Websites for local businesses",
-      desc: "FlitzWeb designs and builds fast, sharp websites for local businesses. Fixed price upfront, live in weeks and easy to find on Google. Book a free intro call.",
+      desc: "FlitzWeb designs and builds fast, sharp websites for local businesses. Fixed price upfront, live in weeks and easy to find on Google. Send us a message on WhatsApp or by email.",
       tz: "· Dutch time (Europe/Amsterdam)",
       required: "This field is required.",
       email: "Enter a valid email address.",
@@ -87,6 +87,7 @@
     swapAttr("placeholder", "ph");
     swapAttr("alt", "alt");
     swapAttr("aria-label", "aria");
+    swapAttr("href", "href"); // WhatsApp and mail links: prefilled text in the current language
 
     document.title = STR[lang].title;
     const meta = $('meta[name="description"]');
