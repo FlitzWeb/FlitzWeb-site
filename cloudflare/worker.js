@@ -3,6 +3,7 @@
 import { computeAvailableSlots, DAYS_AHEAD, isSlotAvailable, slotTimes, workDatesAhead } from "../api/_lib/businessHours.js";
 import { createEvent, getBusyTimes } from "./google.js";
 import { formatWhen, sendConfirmation, sendOwnerNotification } from "./email.js";
+import { advertiseRanges, partialResponse } from "./range.js";
 
 const SITE = "flitzweb.nl";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -40,6 +41,11 @@ export default {
     const headers = new Headers(response.headers);
     if (preview) headers.set("X-Robots-Tag", "noindex");
     else headers.set("Strict-Transport-Security", "max-age=63072000");
+
+    // iPhones only play the homepage film when the server answers byte-range requests.
+    const partial = await partialResponse(request, response, headers);
+    if (partial) return partial;
+    advertiseRanges(headers);
     return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
   },
 };
@@ -90,7 +96,7 @@ async function book(request, env, ctx) {
 }
 
 function notFound(preview) {
-  const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Pagina niet gevonden | FlitzWeb</title><link rel="icon" href="/assets/brand/favicon.svg"><style>body{margin:0;min-height:100vh;display:grid;place-content:center;gap:1rem;padding:1.5rem;font:1.0625rem/1.5 system-ui,sans-serif;text-align:center;background:#f8fafc;color:#0f172a}a{color:#2563eb}</style></head><body><h1>Pagina niet gevonden</h1><p>Deze pagina bestaat niet (meer).</p><p><a href="/">Naar flitzweb.nl</a></p></body></html>`;
+  const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Pagina niet gevonden | FlitzWeb</title><link rel="icon" href="/favicon.svg"><style>body{margin:0;min-height:100vh;display:grid;place-content:center;gap:1rem;padding:1.5rem;font:1.0625rem/1.5 system-ui,sans-serif;text-align:center;background:#f8fafc;color:#0f172a}a{color:#2563eb}</style></head><body><h1>Pagina niet gevonden</h1><p>Deze pagina bestaat niet (meer).</p><p><a href="/">Naar flitzweb.nl</a></p></body></html>`;
   const headers = { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" };
   if (preview) headers["X-Robots-Tag"] = "noindex";
   return new Response(html, { status: 404, headers });

@@ -1,24 +1,27 @@
 # FlitzWeb-site
 
 De website van FlitzWeb — een statische site (HTML/CSS/vanilla JS) met een
-serverless boekingssysteem, gehost op Vercel.
+boekingssysteem, gehost op Cloudflare Workers (`wrangler.jsonc`).
 
 ## Structuur
-- `index.html`, `styles.css`, `script.js` — de site zelf (NL/EN taalwissel in JS).
-- `analytics.js` — dunne wrapper rond Vercel Web Analytics.
-- `assets/brand/` — de logofamilie: `mark.svg` (licht) en `mark-dark.svg` voor
-  donkere vlakken, `lockup*.svg` voor het volledige logo, favicons en
-  `apple-touch-icon.png`. Het kleurenpalet in `styles.css` is hiervan afgeleid:
-  blauw `#3B82F6` → cyaan `#06B6D4`, slate `#0F172A`.
-- `api/` — Vercel serverless functions voor het inplannen van gesprekken:
+- `index.html`, `site.css`, `site.js` — de site zelf (één pagina, Nederlands).
+  De gloeiende horizon in de hero en de afsluiter is pure CSS (`.horizon` in
+  `site.css`); de kleuren staan als variabelen bovenaan dat bestand.
+- `assets/brand/` — het Bolt Z-logo uit de logokit (woordmerk, omgekeerd, wit,
+  symbool). Het woordmerk in de pagina staat inline als `<symbol id="fw-logo">`;
+  typ het logo nooit na, vervang het uit de kit.
+- `favicon.*`, `apple-touch-icon.png`, `icon-*.png`, `maskable-512.png`,
+  `site.webmanifest` — de faviconset uit de logokit.
+- `cloudflare/` — de Worker: serveert de site en de boekings-API.
+- `api/` — de oorspronkelijke Vercel-functies; `api/_lib/businessHours.js` wordt
+  nog door de Worker gebruikt:
   - `availability.js` — vrije tijdslots ophalen (Google Calendar free/busy).
   - `book.js` — een boeking maken + bevestigingsmails versturen.
   - `_lib/` — gedeelde helpers (Google auth/calendar, e-mail via Resend, openingstijden).
 
 ## Lokaal draaien
 ```bash
-npm install
-npx vercel dev   # draait de statische site + de /api functies lokaal
+npx wrangler dev   # de site + /api lokaal (boeken werkt alleen met de secrets)
 ```
 
 ## Omgevingsvariabelen
@@ -31,5 +34,5 @@ voor productie). Vereist voor het boekingssysteem:
 - Optioneel: `BUSINESS_TZ` (standaard `Europe/Amsterdam`).
 
 ## Deploy
-Push naar een branch en open een PR; `main` is beveiligd en deployt naar
-productie via Vercel na merge.
+`main` is live (flitzweb.nl). Werk gaat naar de branch `concept`; die krijgt een
+eigen voorbeeldadres op workers.dev. Boeken werkt daar niet.
