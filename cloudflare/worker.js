@@ -3,6 +3,7 @@
 import { computeAvailableSlots, DAYS_AHEAD, isSlotAvailable, slotTimes, workDatesAhead } from "../api/_lib/businessHours.js";
 import { createEvent, getBusyTimes } from "./google.js";
 import { formatWhen, sendConfirmation, sendOwnerNotification } from "./email.js";
+import { advertiseRanges, partialResponse } from "./range.js";
 
 const SITE = "flitzweb.nl";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -40,6 +41,11 @@ export default {
     const headers = new Headers(response.headers);
     if (preview) headers.set("X-Robots-Tag", "noindex");
     else headers.set("Strict-Transport-Security", "max-age=63072000");
+
+    // iPhones only play the homepage film when the server answers byte-range requests.
+    const partial = await partialResponse(request, response, headers);
+    if (partial) return partial;
+    advertiseRanges(headers);
     return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
   },
 };
