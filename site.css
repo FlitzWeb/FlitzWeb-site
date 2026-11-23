@@ -420,6 +420,8 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
 .price__intro .btn { margin-top: 32px; }
 .price__intro .cta-alt { margin-top: 14px; font-size: 0.9375rem; color: #fff; }
 .price__intro .cta-alt a { color: #fff; text-decoration-color: rgba(255, 255, 255, 0.6); }
+/* On the blue card the link is white (the light-blue link colour would vanish) */
+.price__more { margin-top: 24px; color: #fff; }
 .price__rows > div + div { margin-top: 36px; padding-top: 36px; border-top: 1px solid rgba(255, 255, 255, 0.35); }
 .price__amount { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; }
 .price__amount strong {
