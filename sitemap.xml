@@ -3,12 +3,38 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://flitzweb.nl/</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-23</lastmod>
     <image:image>
       <image:loc>https://flitzweb.nl/assets/og-flitzweb.jpg</image:loc>
       <image:title>FlitzWeb: websites met de snelheid van een flits</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://flitzweb.nl/werk/hakiki-doner-eindhoven/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://flitzweb.nl/werk/rijschool-veilig-eindhoven/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://flitzweb.nl/website-restaurant/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://flitzweb.nl/website-rijschool/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://flitzweb.nl/prijzen/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://flitzweb.nl/over/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://flitzweb.nl/contact/</loc>
+    <lastmod>2026-11-23</lastmod>
   </url>
 </urlset>

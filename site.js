@@ -21,8 +21,6 @@
   const BUSINESS_TZ = "Europe/Amsterdam";
   const STR = {
     nl: {
-      title: "Website laten maken in Eindhoven | FlitzWeb",
-      desc: "FlitzWeb ontwerpt en bouwt snelle, scherpe websites voor lokale ondernemers. Vaste prijs vooraf, live in dagen en goed vindbaar in Google. Stuur ons een bericht via WhatsApp of e-mail.",
       tz: "· Nederlandse tijd",
       required: "Dit veld is verplicht.",
       email: "Vul een geldig e-mailadres in.",
@@ -37,8 +35,6 @@
       submitError: "Er ging iets mis. Probeer het opnieuw of mail ons.",
     },
     en: {
-      title: "Websites for local businesses in Eindhoven | FlitzWeb",
-      desc: "FlitzWeb designs and builds fast, sharp websites for local businesses. Fixed price upfront, live in days and easy to find on Google. Send us a message on WhatsApp or by email.",
       tz: "· Dutch time (Europe/Amsterdam)",
       required: "This field is required.",
       email: "Enter a valid email address.",
@@ -89,9 +85,9 @@
     swapAttr("aria-label", "aria");
     swapAttr("href", "href"); // WhatsApp and mail links: prefilled text in the current language
 
-    document.title = STR[lang].title;
-    const meta = $('meta[name="description"]');
-    if (meta) meta.setAttribute("content", STR[lang].desc);
+    // Each page carries its own English title (<title data-en>, handled above) and
+    // description (<meta name="description" data-en-content>).
+    swapAttr("content", "content");
 
     $$("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     $$("[data-msg]").forEach((el) => { if (el.dataset.msg) el.textContent = STR[lang][el.dataset.msg]; });

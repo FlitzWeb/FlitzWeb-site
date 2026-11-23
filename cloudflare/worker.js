@@ -31,6 +31,17 @@ export default {
       return new Response("", { headers: { "Content-Type": "application/javascript", "Cache-Control": "public, max-age=86400" } });
     }
 
+    // Pages live in folders (/prijzen/index.html). One address per page: /prijzen → /prijzen/.
+    if (!url.pathname.endsWith("/") && !/\.[a-z0-9]+$/i.test(url.pathname)) {
+      const probe = new URL(url);
+      probe.pathname += "/index.html";
+      const page = await env.ASSETS.fetch(new Request(probe, { method: "GET" }));
+      if (page.ok) {
+        url.pathname += "/";
+        return Response.redirect(url.toString(), 308);
+      }
+    }
+
     if (url.pathname.endsWith("/")) {
       url.pathname += "index.html";
       request = new Request(url, request);
