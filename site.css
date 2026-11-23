@@ -252,9 +252,12 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
 .hero h1 {
   font-size: clamp(2.5rem, 6.2vw, 4.75rem);
   font-weight: 700; line-height: 1.02; letter-spacing: -0.035em;
-  max-width: 13ch;
+  /* Wide enough for "Website laten maken / in Eindhoven" on two lines */
+  max-width: 20ch;
 }
 .hero h1 .w { display: inline-block; }
+/* Dutch headline: break after "maken", so the phrase stays together */
+.hero h1 .l { display: block; }
 /* The English headline is longer: give it room to stay on two lines on desktop. */
 html[lang="en"] .hero h1 { max-width: 18ch; }
 .hero__sub {
@@ -417,6 +420,8 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
 .price__intro .btn { margin-top: 32px; }
 .price__intro .cta-alt { margin-top: 14px; font-size: 0.9375rem; color: #fff; }
 .price__intro .cta-alt a { color: #fff; text-decoration-color: rgba(255, 255, 255, 0.6); }
+/* On the blue card the link is white (the light-blue link colour would vanish) */
+.price__more { margin-top: 24px; color: #fff; }
 .price__rows > div + div { margin-top: 36px; padding-top: 36px; border-top: 1px solid rgba(255, 255, 255, 0.35); }
 .price__amount { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; }
 .price__amount strong {
