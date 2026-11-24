@@ -219,15 +219,21 @@ h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.0
 @keyframes fade { from { opacity: 0; } }
 
 /* ---------- Hero ---------- */
+/* The text sits in the top 66% and the glow gets the rest. The text box is in the
+   flow with a minimum height instead of a fixed one: when the text is taller than
+   that (narrow phones, the longer English copy) the hero grows downwards, instead
+   of the centred text spilling up under the nav. */
 .hero {
   --rim: 0.34; --dir: 1; --anchor: 100%;
+  --hero-h: max(100svh, 700px);
   position: relative;
-  min-height: max(100svh, 700px);
+  min-height: var(--hero-h);
+  padding-bottom: calc(var(--hero-h) * 0.34);
   overflow: hidden;
 }
 .hero__inner {
-  position: absolute; inset: 0 0 auto 0;
-  height: 66%;
+  position: relative;
+  min-height: calc(var(--hero-h) * 0.66);
   padding: var(--nav-h) var(--gutter) 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center;
@@ -279,8 +285,19 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
 /* Phones: the buttons stack with the mail line under them, so the horizon sits
    lower and the hero is tall enough to keep clear of them */
 @media (max-width: 560px) {
-  .hero { --rim: 0.27; min-height: max(100svh, 820px); }
+  .hero { --rim: 0.27; --hero-h: max(100svh, 820px); }
   .horizon { --halo-1: 56px; --halo-2: 120px; }
+  /* Keep the pill clear of the nav, and tighten the stack so it fits one screen */
+  .hero__inner { padding-top: calc(var(--nav-h) + 16px); }
+  .hero .pill { margin-bottom: 22px; }
+  /* "Website laten maken" is 8.9em wide: scale it to the screen so the heading
+     stays on two lines (at a flat 40px it broke into three on a 393px iPhone) */
+  .hero h1 { font-size: min(2.5rem, calc((100vw - 2 * var(--gutter)) / 9.2)); }
+  .hero__sub { margin-top: 18px; }
+  .hero__actions { margin-top: 28px; }
+  /* The scroll cue lands under the browser's bottom bar here, and
+     "Bekijk het werk" right above it already goes to the same place */
+  .hero__foot { display: none; }
 }
 
 /* Laptop-height screens: the mail line sits on the same row as the buttons,
