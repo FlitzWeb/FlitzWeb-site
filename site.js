@@ -385,6 +385,22 @@
     sync();
   }
 
+  /* ---------- Sign-off: the bolt forms in glass and settles into the wordmark ----------
+     signoff-glass.js only downloads when the footer comes near, and never for visitors who asked
+     their device for less motion. */
+  const signoff = $(".signoff");
+  if (signoff && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const near = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      near.disconnect();
+      const script = document.createElement("script");
+      script.src = "/signoff-glass.js";
+      script.async = true;
+      document.head.appendChild(script);
+    }, { rootMargin: "0px 0px 900px 0px" });
+    near.observe(signoff);
+  }
+
   /* ---------- Footer year ---------- */
   $$("[data-year]").forEach((el) => { el.textContent = String(new Date().getFullYear()); });
 

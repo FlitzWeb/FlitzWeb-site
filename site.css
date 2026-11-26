@@ -625,6 +625,23 @@ html[lang="en"] .hero h1 { max-width: 18ch; }
 .foot a { display: inline-block; padding-block: 6px; }
 .foot a:hover { color: var(--ink); }
 
+/* Glass reveal (signoff-glass.js): the bolt forms in glass on the Z, then "flit" and "web" wipe out of
+   it and the line below fades in. Without the script none of these states is ever set. */
+.signoff__glass { position: absolute; pointer-events: none; mix-blend-mode: lighten; transition: opacity 0.35s ease; }
+.signoff[data-glass] .signoff__inner .logo svg {
+  transition: clip-path 0.8s var(--ease), opacity 0.45s var(--ease);
+}
+.signoff[data-glass="wait"] .signoff__inner .logo svg,
+.signoff[data-glass="letters"] .signoff__inner .logo svg { --bolt: transparent; }
+.signoff[data-glass="wait"] .signoff__inner .logo svg {
+  opacity: 0;
+  clip-path: inset(-20% var(--glass-r, 50%) -20% var(--glass-l, 50%));
+}
+.signoff[data-glass="letters"] .signoff__inner .logo svg,
+.signoff[data-glass="done"] .signoff__inner .logo svg { clip-path: inset(-20% 0 -20% 0); }
+.signoff[data-glass] .signoff__inner p { transition: opacity 0.7s var(--ease) 0.35s, transform 0.7s var(--ease) 0.35s; }
+.signoff[data-glass="wait"] .signoff__inner p { opacity: 0; transform: translateY(10px); }
+
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .signoff .horizon {
